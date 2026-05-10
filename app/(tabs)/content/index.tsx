@@ -1,0 +1,65 @@
+import React, { useMemo, useState } from 'react';
+import { View, FlatList } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { Sparkles } from 'lucide-react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Tabs, EmptyState, BlurHeader } from '@/components/ui';
+import { PostCard } from '@/components/domain/PostCard';
+import { mockPosts } from '@/mocks';
+import { useTheme } from '@/lib/theme';
+import type { PostStatus } from '@/types';
+
+type TabKey = 'feed' | 'review' | 'scheduled' | 'drafts';
+const STATUS_FOR_TAB: Record<TabKey, PostStatus[]> = {
+  feed: ['published', 'failed'],
+  review: ['queued'],
+  scheduled: ['scheduled'],
+  drafts: ['draft'],
+};
+
+export default function ContentIndex() {
+  const { t } = useTranslation();
+  const router = useRouter();
+  const { c } = useTheme();
+  const insets = useSafeAreaInsets();
+  const [tab, setTab] = useState<TabKey>('feed');
+
+  const items = useMemo(
+    () => mockPosts.filter((p) => STATUS_FOR_TAB[tab].includes(p.status)),
+    [tab],
+  );
+
+  return (
+    <View style={{ flex: 1, backgroundColor: c.background }}>
+      <BlurHeader title={t('tabs.content')} />
+      <View style={{ paddingTop: 12, paddingBottom: 8 }}>
+        <Tabs
+          value={tab}
+          onChange={setTab}
+          items={[
+            { value: 'feed', label: t('content.tabs.feed') },
+            { value: 'review', label: t('content.tabs.review') },
+            { value: 'scheduled', label: t('content.tabs.scheduled') },
+            { value: 'drafts', label: t('content.tabs.drafts') },
+          ]}
+        />
+      </View>
+      <FlatList
+        data={items}
+        keyExtractor={(p) => p.id}
+        contentContainerStyle={{ padding: 20, gap: 16, paddingBottom: insets.bottom + 110 }}
+        renderItem={({ item }) => (
+          <PostCard post={item} onPress={() => router.push({ pathname: '/(tabs)/content/[id]', params: { id: item.id } })} />
+        )}
+        ListEmptyComponent={
+          <EmptyState
+            icon={<Sparkles size={36} color={c.muted} />}
+            title={t('content.empty')}
+            description="Tapez le bouton sparkle pour créer votre première publication."
+          />
+        }
+      />
+    </View>
+  );
+}

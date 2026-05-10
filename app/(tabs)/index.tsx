@@ -1,98 +1,135 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, ScrollView, Pressable } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { ArrowUpRight, Phone, Star, FileText, UserPlus, MessageSquare, Sparkles } from 'lucide-react-native';
+import { Text, Card, Avatar, Divider, SectionHeader } from '@/components/ui';
+import { GlowCard } from '@/components/brand/GlowCard';
+import { KpiTile } from '@/components/brand/KpiTile';
+import { AIOrb } from '@/components/brand/AIOrb';
+import { UsageBar } from '@/components/domain/UsageBar';
+import { useTheme, radius } from '@/lib/theme';
+import { useAuthStore } from '@/stores/authStore';
+import { useSettingsStore } from '@/stores/settingsStore';
+import { mockBusiness, mockReports, mockUsage } from '@/mocks';
+import { formatRelative } from '@/lib/utils';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+export default function Home() {
+  const { t } = useTranslation();
+  const router = useRouter();
+  const { c } = useTheme();
+  const insets = useSafeAreaInsets();
+  const user = useAuthStore((s) => s.user);
+  const lng = useSettingsStore((s) => s.language);
+  const firstName = (user?.name || 'Patrick').split(/[.\s]/)[0]!;
+  const report = mockReports[0]!;
 
-export default function HomeScreen() {
+  const activity = [
+    { icon: <FileText size={16} color={c.primary} />, title: 'Publication envoyée', sub: 'Promo griot · vendredi', at: new Date(Date.now() - 1000 * 60 * 30).toISOString(), ai: false, href: '/(tabs)/content' },
+    { icon: <Phone size={16} color={c.primary} />, title: 'Appel géré', sub: 'Réservation 4p · 19 h 15', at: new Date(Date.now() - 1000 * 60 * 90).toISOString(), ai: true, href: '/(tabs)/inbox/calls' },
+    { icon: <Star size={16} color={c.accent} />, title: 'Nouvel avis 5 ⭐', sub: 'Marie-Lourdes Joseph', at: new Date(Date.now() - 1000 * 60 * 60 * 4).toISOString(), ai: true, href: '/(tabs)/inbox/reviews' },
+    { icon: <UserPlus size={16} color={c.info} />, title: 'Nouveau client', sub: 'Aminata Diallo', at: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(), ai: false, href: '/(tabs)/crm' },
+    { icon: <MessageSquare size={16} color={c.deep} />, title: 'Réponse WhatsApp', sub: 'Suivi commande #2032', at: new Date(Date.now() - 1000 * 60 * 60 * 30).toISOString(), ai: true, href: '/(tabs)/inbox' },
+  ];
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <ScrollView
+      style={{ flex: 1, backgroundColor: c.background }}
+      contentContainerStyle={{ paddingTop: insets.top + 12, paddingBottom: insets.bottom + 120, paddingHorizontal: 20, gap: 24 }}
+    >
+      {/* Hero */}
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 12 }}>
+        <View style={{ flex: 1 }}>
+          <Text variant="overline" color="mutedFg">{mockBusiness.name}</Text>
+          <Text variant="displayLg" style={{ marginTop: 4 }}>Bonjour,</Text>
+          <Text variant="displayLg" style={{ marginTop: -8, color: c.accent }}>{firstName}.</Text>
+          <Text color="muted" style={{ marginTop: 8 }}>Voici votre semaine.</Text>
+        </View>
+        <Pressable onPress={() => router.push('/settings')}>
+          <Avatar name={user?.name || 'Patrick'} size="lg" ring />
+        </Pressable>
+      </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      {/* Today insight */}
+      <Animated.View entering={FadeInDown.delay(120).springify()}>
+        <GlowCard tone="emerald">
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+            <AIOrb size={22} />
+            <Text variant="overline" color="muted">Insight du jour</Text>
+          </View>
+          <Text variant="serifItalic" style={{ fontSize: 22, lineHeight: 30 }}>
+            "{report.trend.summary}"
+          </Text>
+          <Pressable
+            onPress={() => router.push('/(tabs)/assistant')}
+            style={{ marginTop: 14, flexDirection: 'row', alignItems: 'center', gap: 6 }}
+          >
+            <Text style={{ color: c.accent, fontFamily: 'Inter_600SemiBold' }}>Voir le rapport complet</Text>
+            <ArrowUpRight size={16} color={c.accent} />
+          </Pressable>
+        </GlowCard>
+      </Animated.View>
+
+      {/* KPI grid 2x2 */}
+      <View>
+        <SectionHeader overline="Cette semaine" title="Vos chiffres" />
+        <View style={{ gap: 12 }}>
+          <View style={{ flexDirection: 'row', gap: 12 }}>
+            <KpiTile label="Revenus" value={24580} prefix="$" delta={18.4} series={[12, 18, 14, 22, 31, 28, 19]} delay={0} />
+            <KpiTile label="Appels gérés" value={47} delta={12} series={[3, 5, 4, 8, 9, 11, 7]} delay={80} />
+          </View>
+          <View style={{ flexDirection: 'row', gap: 12 }}>
+            <KpiTile label="Publications" value={mockUsage.posts.used} delta={-1.2} series={[1, 2, 1, 2, 0, 1, 1]} delay={160} tone="accent" />
+            <KpiTile label="Nouveaux clients" value={5} delta={40} series={[0, 1, 0, 2, 1, 0, 1]} delay={240} tone="accent" />
+          </View>
+        </View>
+      </View>
+
+      {/* Activity */}
+      <View>
+        <SectionHeader overline="Activité" title="Récente" action="Tout voir" onAction={() => router.push('/(tabs)/inbox')} />
+        <Card padding={0}>
+          {activity.map((a, i) => (
+            <View key={i}>
+              <Pressable onPress={() => router.push(a.href as any)}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14 }}>
+                  <View
+                    style={{
+                      width: 36, height: 36, borderRadius: 999,
+                      backgroundColor: c.surfaceHigh,
+                      alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >
+                    {a.icon}
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                      {a.ai ? <AIOrb size={8} active={false} /> : null}
+                      <Text variant="bodyEmphasis">{a.title}</Text>
+                    </View>
+                    <Text variant="caption" color="muted">{a.sub}</Text>
+                  </View>
+                  <Text variant="mono" color="muted" style={{ fontSize: 11 }}>{formatRelative(a.at, lng)}</Text>
+                </View>
+              </Pressable>
+              {i < activity.length - 1 ? <Divider /> : null}
+            </View>
+          ))}
+        </Card>
+      </View>
+
+      {/* Usage compact */}
+      <View>
+        <SectionHeader overline="Forfait" title="Utilisation" action="Détails" onAction={() => router.push('/settings/usage')} />
+        <Card>
+          <View style={{ gap: 14 }}>
+            <UsageBar label="Publications" used={mockUsage.posts.used} limit={mockUsage.posts.limit} onUpgrade={() => router.push('/settings/subscription')} />
+            <UsageBar label="Appels gérés" used={mockUsage.calls.used} limit={mockUsage.calls.limit} />
+          </View>
+        </Card>
+      </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});

@@ -1,0 +1,345 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "next": "Next",
+    "previous": "Previous",
+    "skip": "Skip",
+    "continue": "Continue",
+    "back": "Back",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "success": "Success",
+    "yes": "Yes",
+    "no": "No",
+    "search": "Search",
+    "comingSoon": "Coming soon",
+    "soon": "soon",
+    "demoMode": "🎭 Demo mode",
+    "optional": "optional"
+  },
+  "auth": {
+    "welcome": {
+      "slide1Title": "Post effortlessly",
+      "slide1Sub": "An AI that creates and publishes for you on Facebook and Instagram.",
+      "slide2Title": "Never miss a customer",
+      "slide2Sub": "An agent answers calls and messages 24/7, in your language.",
+      "slide3Title": "Decide with data",
+      "slide3Sub": "An assistant that gives you weekly insights.",
+      "start": "Get started",
+      "haveAccount": "I already have an account"
+    },
+    "signUp": {
+      "title": "Create your account",
+      "subtitle": "Welcome to AfroLink",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmLabel": "Confirm password",
+      "cta": "Sign up",
+      "haveAccount": "Already have an account? Sign in"
+    },
+    "signIn": {
+      "title": "Sign in",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "forgot": "Forgot password?",
+      "cta": "Sign in",
+      "noAccount": "No account yet? Sign up"
+    },
+    "forgot": {
+      "title": "Reset password",
+      "subtitle": "Enter your email and we’ll send a reset link.",
+      "cta": "Send link",
+      "sent": "If an account exists, an email was sent."
+    },
+    "plan": {
+      "title": "Choose your plan",
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "annualBadge": "−15%",
+      "popular": "Most popular",
+      "decouverte": "Discovery",
+      "performance": "Performance",
+      "premium": "Premium",
+      "perMonth": "/mo",
+      "perYear": "/yr",
+      "trial": "Free 15-day trial",
+      "continueWith": "Continue with {{plan}}"
+    },
+    "payment": {
+      "title": "Payment details",
+      "card": "Card number",
+      "expiry": "Expiry",
+      "cvv": "CVV",
+      "name": "Cardholder name",
+      "disclaimer": "Cancel anytime before the trial ends. No charge before {{date}}.",
+      "cta": "Start my trial"
+    }
+  },
+  "onboarding": {
+    "welcomeVideo": {
+      "title": "Welcome to AfroLink",
+      "subtitle": "Discover the app in 1:30",
+      "duration": "1:30"
+    },
+    "businessProfile": {
+      "title": "Tell us about your business",
+      "stepType": "Business type",
+      "stepName": "Name and address",
+      "stepHours": "Opening hours",
+      "stepServices": "Services offered",
+      "stepTone": "Style and languages",
+      "typeRestaurant": "Restaurant",
+      "typeBar": "Bar",
+      "typeGrocery": "Grocery",
+      "typeSolo": "Solo service",
+      "nameLabel": "Business name",
+      "addressLabel": "Address",
+      "servicesLabel": "Your services (tap to add)",
+      "toneLabel": "Voice tone",
+      "toneWarm": "Warm",
+      "tonePro": "Professional",
+      "toneCasual": "Casual",
+      "toneDirect": "Direct",
+      "languagesLabel": "Spoken languages"
+    },
+    "connectSocials": {
+      "title": "Connect your social accounts",
+      "subtitle": "So the AI can post on your behalf.",
+      "explainer": "You can disconnect anytime from Settings."
+    },
+    "connectGoogle": {
+      "title": "Google Business Profile",
+      "subtitle": "To manage your Google reviews automatically."
+    },
+    "connectCalendar": {
+      "title": "Connect your calendar",
+      "subtitle": "So the agent can book appointments."
+    },
+    "trainAgent": {
+      "title": "Set up your AI phone agent",
+      "greetingLabel": "Greeting message",
+      "greetingDefault": "Hello, you’ve reached {{name}}, how can I help?",
+      "escalationLabel": "Keywords that transfer to you (comma-separated)",
+      "escalationDefault": "refund, complaint, urgent",
+      "languagesLabel": "Languages",
+      "test": "🎙️ Test my agent",
+      "transcript1": "Hi, this is the virtual assistant for {{name}}!",
+      "transcript2": "How can I help?",
+      "userBook": "Book a table",
+      "transcript3": "For how many people and what time?"
+    },
+    "done": {
+      "title": "You’re all set!",
+      "subtitle": "Discover your new dashboard.",
+      "cta": "Open the app"
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "content": "Content",
+    "inbox": "Inbox",
+    "assistant": "Assistant",
+    "crm": "Customers"
+  },
+  "home": {
+    "greeting": "Hi {{name}} 👋",
+    "today": "Today",
+    "thisWeek": "This week",
+    "viewReport": "View full report",
+    "quickActions": "Quick actions",
+    "qaGenerate": "Generate a post",
+    "qaInbox": "View messages",
+    "qaAddCustomer": "Add customer",
+    "qaAskAssistant": "Ask the assistant",
+    "usage": "Usage",
+    "activity": "Recent activity",
+    "statPosts": "Posts",
+    "statCalls": "Calls handled",
+    "statCustomers": "New customers",
+    "vsYesterday": "vs yesterday"
+  },
+  "content": {
+    "tabs": { "feed": "Feed", "review": "To review", "scheduled": "Scheduled", "drafts": "Drafts" },
+    "fab": "Generate",
+    "empty": "No posts here yet.",
+    "generate": {
+      "title": "Generate a post",
+      "stepTemplate": "Choose a template",
+      "stepPrompt": "Describe your post",
+      "stepGenerating": "Generating…",
+      "stepPreview": "Preview",
+      "tplPromo": "Daily promo",
+      "tplDish": "New dish",
+      "tplEvent": "Event",
+      "tplTestimonial": "Customer review",
+      "tplHiring": "Hiring",
+      "tplCustom": "Custom",
+      "promptLabel": "What do you want to post?",
+      "promptPlaceholder": "e.g. 2-for-1 on Creole dishes this Friday",
+      "channels": "Channels",
+      "tone": "Tone",
+      "regenerate": "Regenerate",
+      "approve": "Approve",
+      "publishNow": "Publish now",
+      "schedule": "Schedule",
+      "saveDraft": "Save as draft",
+      "scheduled": "Post scheduled",
+      "published": "Post published"
+    },
+    "schedule": {
+      "title": "Schedule the post",
+      "date": "Date",
+      "time": "Time",
+      "confirm": "Confirm"
+    },
+    "post": {
+      "engagement": "Engagement",
+      "likes": "Likes",
+      "comments": "Comments",
+      "reach": "Reach",
+      "republish": "Republish",
+      "duplicate": "Duplicate"
+    }
+  },
+  "inbox": {
+    "title": "Inbox",
+    "all": "All",
+    "calls": "Calls",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "reviews": "Google reviews",
+    "empty": "No messages to show.",
+    "aiHandled": "🤖 Handled by AI",
+    "manual": "✋ Sent manually",
+    "composer": "Type a message…",
+    "aiSuggest": "AI suggest reply",
+    "viewCustomer": "View customer profile",
+    "markUnread": "Mark unread",
+    "archive": "Archive",
+    "callTransferred": "Transferred to you",
+    "callDuration": "{{seconds}}s",
+    "review": {
+      "approve": "Approve and post",
+      "edit": "Edit",
+      "reject": "Reject",
+      "approved": "Reply posted",
+      "draftedBy": "AI-drafted reply"
+    }
+  },
+  "assistant": {
+    "tabs": { "chat": "Chat", "report": "Weekly report", "form": "Guided form" },
+    "chat": {
+      "placeholder": "Ask the assistant…",
+      "quick1": "How is my business this week?",
+      "quick2": "Which post performed best?",
+      "quick3": "What is my best day?",
+      "quick4": "Suggest a promo"
+    },
+    "report": {
+      "title": "Weekly report",
+      "trend": "📈 Overall trend",
+      "wins": "🌟 Your wins",
+      "issues": "⚠️ Watch outs",
+      "actions": "🎯 Recommended actions",
+      "footer": "Generated on {{date}} • Next report Monday"
+    },
+    "form": {
+      "title": "Guided form",
+      "progress": "Question {{n}} of {{total}}",
+      "q1": "What is your main goal this month?",
+      "q1a": "More customers",
+      "q1b": "Increase sales",
+      "q1c": "Build loyalty",
+      "q1d": "Hire",
+      "q2": "How many customers per week today?",
+      "q3": "Average margin per sale?",
+      "q4": "Which days are you most active?",
+      "analyze": "Analyze",
+      "analyzing": "Analyzing your answers…",
+      "results": "Your recommendations"
+    }
+  },
+  "crm": {
+    "title": "Customers",
+    "search": "Search a customer",
+    "sortName": "Name",
+    "sortRecent": "Recent",
+    "sortSource": "Source",
+    "fab": "Add",
+    "import": "Import CSV",
+    "export": "Export CSV",
+    "exported": "Export ready",
+    "empty": "No customers yet.",
+    "tabs": { "profile": "Profile", "history": "History", "notes": "Notes" },
+    "fields": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "source": "Source",
+      "tags": "Tags"
+    },
+    "sources": { "phone": "Call", "social": "Social", "walkIn": "Walk-in", "referral": "Referral", "import": "CSV import" },
+    "add": { "title": "New customer", "saved": "Customer added" },
+    "importMock": {
+      "title": "Import contacts",
+      "choose": "Choose a CSV file",
+      "downloading": "Downloading template…",
+      "importing": "Importing…",
+      "done": "{{n}} contacts imported",
+      "viewContacts": "View contacts"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "business": "My business",
+    "accounts": "Connected accounts",
+    "agent": "AI agent settings",
+    "subscription": "Subscription & billing",
+    "usage": "Usage",
+    "language": "Language",
+    "notifications": "Notifications",
+    "help": "Help & FAQ",
+    "about": "About",
+    "signOut": "Sign out",
+    "languageUpdated": "Language updated",
+    "subscriptionTitle": "My subscription",
+    "currentPlan": "Current plan",
+    "changePlan": "Change plan",
+    "nextBilling": "Next billing",
+    "paymentMethod": "Payment method",
+    "billingHistory": "Billing history",
+    "cancelSub": "Cancel subscription",
+    "cancelConfirm": "Are you sure? Your access stays active until period end.",
+    "agentHours": "Agent active hours",
+    "testAgent": "Test the agent",
+    "notif": {
+      "posts": "Posts",
+      "calls": "Calls",
+      "reviews": "Reviews",
+      "weeklyReport": "Weekly report"
+    }
+  },
+  "errors": {
+    "required": "Required",
+    "invalidEmail": "Invalid email",
+    "passwordTooShort": "Password too short (min 8)",
+    "passwordsDontMatch": "Passwords do not match"
+  },
+  "channels": {
+    "phone": "Phone",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "googleReview": "Google review",
+    "email": "Email"
+  }
+}
