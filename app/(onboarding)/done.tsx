@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Text, Button } from '@/components/ui';
+import { Logo } from '@/components/Logo';
 import { AnimatedCheckmark } from '@/components/animations/AnimatedCheckmark';
 import { KenteTexture } from '@/components/brand/KenteTexture';
 import { useOnboardingStore } from '@/stores/onboardingStore';
@@ -29,6 +30,9 @@ export default function Done() {
       />
       <KenteTexture tone="emerald" opacity={0.07} />
       <View style={{ flex: 1, padding: 32, paddingBottom: insets.bottom + 24, paddingTop: insets.top + 24 }}>
+        <View style={{ alignItems: 'center' }}>
+          <Logo width={140} />
+        </View>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 28 }}>
           <AnimatedCheckmark size={140} />
           <View style={{ alignItems: 'center', gap: 10 }}>
@@ -39,7 +43,7 @@ export default function Done() {
             </Text>
           </View>
         </View>
-        <Button title={t('onboarding.done.cta')} fullWidth onPress={() => router.replace('/(tabs)')} />
+        <Button title={t('onboarding.done.cta')} fullWidth pill={false} onPress={() => router.replace('/(tabs)')} />
       </View>
     </View>
   );

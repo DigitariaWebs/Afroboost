@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Mic } from 'lucide-react-native';
 import { Text, Button, Input, Sheet, Card, FloatingBack, Pill } from '@/components/ui';
+import { Logo } from '@/components/Logo';
 import { Waveform } from '@/components/animations/Waveform';
 import { AIOrb } from '@/components/brand/AIOrb';
 import { AITypingIndicator } from '@/components/domain/AITypingIndicator';
@@ -26,6 +27,7 @@ export default function TrainAgent() {
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <FloatingBack />
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 22 }} keyboardShouldPersistTaps="handled">
+        <Logo width={120} />
         <View style={{ gap: 8 }}>
           <Text variant="overline" color="mutedFg">Agent IA téléphonique</Text>
           <Text variant="display" style={{ fontSize: 34 }}>Donnez-lui{'\n'}<Text variant="display" style={{ color: c.accent, fontSize: 34 }}>une voix.</Text></Text>
@@ -68,7 +70,7 @@ export default function TrainAgent() {
         </Pressable>
 
         <View style={{ flex: 1 }} />
-        <Button title={t('common.continue')} fullWidth onPress={() => router.push('/(onboarding)/done')} />
+        <Button title={t('common.continue')} fullWidth pill={false} onPress={() => router.push('/(onboarding)/done')} />
       </ScrollView>
       <AgentTestSheet open={open} onClose={() => setOpen(false)} businessName={businessName} />
     </View>
@@ -145,7 +147,7 @@ function AgentTestSheet({ open, onClose, businessName }: { open: boolean; onClos
         ))}
         {typing ? <AITypingIndicator /> : null}
       </ScrollView>
-      <Button title="Fermer" variant="outline" onPress={onClose} fullWidth style={{ marginTop: 16 }} />
+      <Button title="Fermer" variant="outline" onPress={onClose} fullWidth pill={false} style={{ marginTop: 16 }} />
     </Sheet>
   );
 }

@@ -3,8 +3,10 @@ import { View, Pressable, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Plus, X, Utensils, Wine, ShoppingCart, User } from 'lucide-react-native';
+import { Plus, X, Utensils, Wine, ShoppingCart, User, MapPin } from 'lucide-react-native';
+import * as Linking from 'expo-linking';
 import { Text, Button, Input, Stepper, RadioGroup, Pill, FloatingBack, Card } from '@/components/ui';
+import { Logo } from '@/components/Logo';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { useTheme, radius } from '@/lib/theme';
 import type { BusinessType, Tone, Language } from '@/types';
@@ -31,6 +33,9 @@ export default function BusinessProfile() {
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <FloatingBack />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 20, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 20 }}>
+        <View style={{ alignItems: 'flex-start' }}>
+          <Logo width={120} />
+        </View>
         <View style={{ gap: 6 }}>
           <Text variant="overline" color="mutedFg">Étape {step + 1} sur {TOTAL} · {STEP_TITLES[step]}</Text>
           <Text variant="display" style={{ fontSize: 36 }}>{t('onboarding.businessProfile.title')}</Text>
@@ -52,6 +57,19 @@ export default function BusinessProfile() {
                 placeholder="1234 rue Sainte-Catherine, Montréal"
                 value={draft.address ?? ''}
                 onChangeText={(v) => updateBiz({ address: v })}
+              />
+              <Button
+                title={t('onboarding.businessProfile.browseMap')}
+                variant="outline"
+                leftIcon={<MapPin size={18} color={c.accent} />}
+                pill={false}
+                onPress={() => {
+                  const q = (draft.address ?? '').trim();
+                  const url = q
+                    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`
+                    : 'https://www.google.com/maps';
+                  Linking.openURL(url);
+                }}
               />
               <Card padding={12}>
                 <Text variant="overline" color="mutedFg" style={{ marginBottom: 6 }}>Suggestions</Text>
@@ -76,9 +94,9 @@ export default function BusinessProfile() {
         </View>
 
         <View style={{ flexDirection: 'row', gap: 8, marginTop: 'auto' }}>
-          <Button title={t('common.previous')} variant="outline" onPress={prev} />
+          <Button title={t('common.previous')} variant="outline" onPress={prev} pill={false} />
           <View style={{ flex: 1 }}>
-            <Button title={step === TOTAL - 1 ? t('common.continue') : t('common.next')} onPress={next} fullWidth />
+            <Button title={step === TOTAL - 1 ? t('common.continue') : t('common.next')} onPress={next} fullWidth pill={false} />
           </View>
         </View>
       </ScrollView>

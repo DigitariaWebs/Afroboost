@@ -8,6 +8,7 @@ import { Play } from 'lucide-react-native';
 import { Text, Button } from '@/components/ui';
 import { AIOrb } from '@/components/brand/AIOrb';
 import { KenteTexture } from '@/components/brand/KenteTexture';
+import { Logo } from '@/components/Logo';
 import { useTheme, radius } from '@/lib/theme';
 
 export default function WelcomeVideo() {
@@ -18,10 +19,8 @@ export default function WelcomeVideo() {
 
   return (
     <View style={{ flex: 1, backgroundColor: c.background }}>
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
-        <Pressable onPress={() => router.push('/(onboarding)/business-profile')}>
-          <Text color="muted">{t('common.skip')}</Text>
-        </Pressable>
+      <View style={{ alignItems: 'center', paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
+        <Logo width={120} />
       </View>
       <View style={{ flex: 1, padding: 24, justifyContent: 'space-between' }}>
         <View style={{ gap: 12, marginTop: 12 }}>
@@ -67,7 +66,7 @@ export default function WelcomeVideo() {
           </View>
         </Pressable>
 
-        <Button title={t('common.continue')} onPress={() => router.push('/(onboarding)/business-profile')} fullWidth />
+        <Button title={t('common.continue')} onPress={() => router.push('/(onboarding)/business-profile')} fullWidth pill={false} />
       </View>
     </View>
   );

@@ -84,18 +84,12 @@ export function NavBarFab() {
                   style={{
                     width: 56,
                     height: 56,
-                    borderRadius: 999,
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginHorizontal: 4,
-                    marginTop: -22,
-                    backgroundColor: c.background,
-                    borderWidth: 2,
-                    borderColor: c.surfaceHigh,
                   }}
                 >
                   <AIOrb size={42} active />
-                  <Sparkles size={18} color={c.accentFg} style={{ position: 'absolute' }} />
                 </Pressable>
               );
             }

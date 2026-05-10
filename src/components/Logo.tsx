@@ -1,24 +1,37 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Text } from '@/components/ui/Text';
-import { useTheme, radius } from '@/lib/theme';
+import { Image } from 'expo-image';
 
-export function Logo({ size = 56 }: { size?: number }) {
-  const { c } = useTheme();
+const LOGO_SOURCE = require('../../assets/images/logo.png');
+
+const WORDMARK_WIDTH_RATIO = 0.5;
+const WORDMARK_VERTICAL_OFFSET = 0.12;
+const WORDMARK_ASPECT = 3;
+
+export function Logo({ width = 160 }: { width?: number }) {
+  const height = Math.round(width / WORDMARK_ASPECT);
+  const innerSize = width / WORDMARK_WIDTH_RATIO;
+  const translateY = -width * WORDMARK_VERTICAL_OFFSET;
+
   return (
     <View
       style={{
-        width: size,
-        height: size,
-        borderRadius: radius.full,
-        backgroundColor: c.primary,
+        width,
+        height,
+        overflow: 'hidden',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
-      <Text style={{ color: c.primaryFg, fontFamily: 'Inter_700Bold', fontSize: size * 0.42 }}>
-        AL
-      </Text>
+      <Image
+        source={LOGO_SOURCE}
+        style={{
+          width: innerSize,
+          height: innerSize,
+          transform: [{ translateY }],
+        }}
+        contentFit="contain"
+      />
     </View>
   );
 }

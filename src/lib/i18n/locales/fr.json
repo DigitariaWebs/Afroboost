@@ -32,6 +32,15 @@
       "start": "Commencer",
       "haveAccount": "J’ai déjà un compte"
     },
+    "choose": {
+      "overline": "Bienvenue",
+      "titleStart": "Prêt·e à",
+      "titleAccent": "commencer.",
+      "subtitle": "Créez un compte pour démarrer votre essai, ou connectez-vous si vous en avez déjà un.",
+      "signUpCta": "Créer un compte",
+      "signInCta": "J’ai déjà un compte",
+      "terms": "En continuant, vous acceptez nos conditions et notre politique de confidentialité."
+    },
     "signUp": {
       "title": "Créer un compte",
       "subtitle": "Bienvenue sur AfroLink",
@@ -98,6 +107,7 @@
       "typeSolo": "Service solo",
       "nameLabel": "Nom du commerce",
       "addressLabel": "Adresse",
+      "browseMap": "Parcourir la carte",
       "servicesLabel": "Vos services (appuyez pour ajouter)",
       "toneLabel": "Style de voix",
       "toneWarm": "Chaleureux",

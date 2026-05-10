@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text, Button, FloatingBack } from '@/components/ui';
+import { Logo } from '@/components/Logo';
 import { MockOAuthButton } from '@/components/domain/MockOAuthButton';
 import { useOnboardingStore } from '@/stores/onboardingStore';
 import { useTheme } from '@/lib/theme';
@@ -18,6 +19,7 @@ export default function ConnectCalendar() {
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <FloatingBack />
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 24 }}>
+        <Logo width={120} />
         <View style={{ gap: 8 }}>
           <Text variant="overline" color="mutedFg">Calendrier</Text>
           <Text variant="display" style={{ fontSize: 36 }}>Vos rendez-vous,{'\n'}<Text variant="display" style={{ color: c.accent, fontSize: 36 }}>pris pour vous.</Text></Text>
@@ -29,9 +31,9 @@ export default function ConnectCalendar() {
         </View>
         <View style={{ flex: 1 }} />
         <View style={{ flexDirection: 'row', gap: 8 }}>
-          <Button title={t('common.skip')} variant="outline" onPress={() => router.push('/(onboarding)/train-agent')} />
+          <Button title={t('common.skip')} variant="outline" pill={false} onPress={() => router.push('/(onboarding)/train-agent')} />
           <View style={{ flex: 1 }}>
-            <Button title={t('common.continue')} fullWidth onPress={() => router.push('/(onboarding)/train-agent')} />
+            <Button title={t('common.continue')} fullWidth pill={false} onPress={() => router.push('/(onboarding)/train-agent')} />
           </View>
         </View>
       </ScrollView>

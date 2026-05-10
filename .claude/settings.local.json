@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx create-expo-app@latest . --template default --yes)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(python scripts/upscale_gifs.py)"
     ]
   }
 }

@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text, Input, Button, FloatingBack } from '@/components/ui';
-import { AIOrb } from '@/components/brand/AIOrb';
+import { Logo } from '@/components/Logo';
 import { useAuthStore } from '@/stores/authStore';
 import { useTheme } from '@/lib/theme';
 
@@ -41,7 +41,7 @@ export default function SignUp() {
       <FloatingBack />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 32 }} keyboardShouldPersistTaps="handled">
         <View style={{ gap: 16 }}>
-          <AIOrb size={36} />
+          <Logo width={150} />
           <Text variant="overline" color="mutedFg">Bienvenue</Text>
           <Text variant="displayLg" style={{ fontSize: 48, lineHeight: 52 }}>Créez votre{'\n'}<Text variant="displayLg" style={{ color: c.accent, fontSize: 48, lineHeight: 52 }}>compte.</Text></Text>
           <Text variant="serifItalic" color="muted" style={{ fontSize: 18 }}>15 jours d'essai. Annulable à tout moment.</Text>

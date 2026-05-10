@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { View, Pressable, ActivityIndicator } from 'react-native';
+import { View, Pressable, ActivityIndicator, Image } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSequence, withSpring } from 'react-native-reanimated';
-import { Check, Mail, Calendar, MessageCircle, Phone, CreditCard, Globe, Camera, ThumbsUp, ArrowRight } from 'lucide-react-native';
+import { Check, Mail, Calendar, MessageCircle, Phone, CreditCard, Globe, ArrowRight } from 'lucide-react-native';
 import { Text } from '@/components/ui/Text';
 import { useTheme, radius } from '@/lib/theme';
 import { mockDelay } from '@/lib/mock-api';
 import type { Provider } from '@/types';
 
+const FACEBOOK_LOGO = require('../../../assets/images/facebook.png');
+const INSTAGRAM_LOGO = require('../../../assets/images/instagram.png');
+
 const PROVIDER_META: Record<Provider, { name: string; bg: string; icon: (size: number, color: string) => React.ReactNode }> = {
-  facebook: { name: 'Facebook', bg: '#1877F2', icon: (s, c) => <ThumbsUp size={s} color={c} /> },
-  instagram: { name: 'Instagram', bg: '#E1306C', icon: (s, c) => <Camera size={s} color={c} /> },
+  facebook: { name: 'Facebook', bg: 'transparent', icon: (s) => <Image source={FACEBOOK_LOGO} style={{ width: s * 2, height: s * 2 }} resizeMode="contain" /> },
+  instagram: { name: 'Instagram', bg: 'transparent', icon: (s) => <Image source={INSTAGRAM_LOGO} style={{ width: s * 2, height: s * 2 }} resizeMode="contain" /> },
   google: { name: 'Google Business', bg: '#0F9D58', icon: (s, c) => <Globe size={s} color={c} /> },
   whatsapp: { name: 'WhatsApp', bg: '#25D366', icon: (s, c) => <MessageCircle size={s} color={c} /> },
   twilio: { name: 'Twilio', bg: '#F22F46', icon: (s, c) => <Phone size={s} color={c} /> },
