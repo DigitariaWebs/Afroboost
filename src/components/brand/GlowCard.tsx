@@ -21,11 +21,13 @@ export function GlowCard({
   const { c } = useTheme();
 
   const tones: Record<NonNullable<GlowCardProps['tone']>, string[]> = {
-    emerald: [c.primary + '22', c.surfaceElevated, c.surface],
-    gold: [c.accent + '22', c.surfaceElevated, c.surface],
-    plum: [c.deep + '40', c.surfaceElevated, c.surface],
+    emerald: [c.primary + '22', c.surfaceElevated, c.accent + '14'],
+    gold: [c.accentGradientFrom + '33', c.surfaceElevated, c.accentGradientTo + '22'],
+    plum: [c.deep + '40', c.surfaceElevated, c.accent + '14'],
     subtle: [c.surfaceHigh, c.surfaceElevated, c.surface],
   };
+
+  const borderColor = tone === 'gold' ? c.accentMuted : c.borderStrong;
 
   return (
     <View
@@ -35,7 +37,7 @@ export function GlowCard({
           borderRadius: radius.lg,
           overflow: 'hidden',
           borderWidth: 1,
-          borderColor: c.borderStrong,
+          borderColor,
         },
         style,
       ]}

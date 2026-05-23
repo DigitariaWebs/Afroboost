@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "AfroBoost — AI for Afro-Caribbean entrepreneurs",
+    "description": "The AI that publishes your posts, answers your calls 24/7, and tells you what's working. Built for restaurants, bars, and small businesses."
+  },
+  "banner": {
+    "text": "15-day free trial · No credit card required · +20% growth guarantee"
+  },
+  "nav": {
+    "features": "Features",
+    "how": "How it works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "AfroBoost — AI for entrepreneurs",
+    "titleStart": "Save 10+ hours a week.",
+    "titleAccent": "Grow your business.",
+    "subtitle": "The AI that publishes your posts, answers your calls 24/7, and tells you what's working — built for restaurants, bars, and small businesses from the Afro-Caribbean diaspora.",
+    "primaryCta": "Download the app",
+    "secondaryCta": "See the features",
+    "trust1": "+20% revenue guarantee",
+    "trust2": "15-day free trial",
+    "trust3": "FR · EN · Creole soon",
+    "appStoreTop": "Download on the",
+    "appStoreName": "App Store",
+    "playTop": "Get it on",
+    "playName": "Google Play"
+  },
+  "pillars": {
+    "overline": "3 pillars, 1 app",
+    "title": "Everything you need, in a single app.",
+    "subtitle": "AfroBoost replaces half a dozen tools — content creation, phone agent, CRM, analytics — and makes them work together.",
+    "content": {
+      "label": "Pillar 1 — Marketing",
+      "title": "Post effortlessly.",
+      "body": "An AI that writes and publishes your Facebook and Instagram posts in your voice, your tone, your language.",
+      "demoCaption": "Creole promo — Friday night",
+      "demoTime": "Scheduled · 6:00 PM",
+      "demoTone": "Warm tone"
+    },
+    "agent": {
+      "label": "Pillar 2 — Customer service",
+      "title": "Never miss a customer.",
+      "body": "An AI agent handles calls 24/7, takes reservations, and transfers to you when it matters.",
+      "demoLine1": "Hi, this is the AfroBoost virtual agent!",
+      "demoLine2": "Book a table for 4",
+      "demoLine3": "Perfect, what time works?",
+      "demoBadge": "🤖 Handled by AI"
+    },
+    "intel": {
+      "label": "Pillar 3 — Decisions",
+      "title": "Decide with data.",
+      "body": "A weekly report and chat assistant that turn your data into clear next steps.",
+      "demoKpi1": "Week revenue",
+      "demoKpi2": "Calls handled",
+      "demoTrend": "vs last week"
+    }
+  },
+  "how": {
+    "overline": "Set up in 3 minutes",
+    "title": "How it works.",
+    "subtitle": "No complicated setup. The AI learns your business while you grab a coffee.",
+    "steps": {
+      "s1Number": "01",
+      "s1Title": "Connect your accounts",
+      "s1Body": "Facebook, Instagram, Google Business, calendar. Three clicks, no copy-pasting.",
+      "s2Number": "02",
+      "s2Title": "Train your agent",
+      "s2Body": "Give it your greeting, your services, your tone. The AI adapts to your voice.",
+      "s3Number": "03",
+      "s3Title": "Watch it grow",
+      "s3Body": "Posts published, calls handled, customers retained. Track everything from the dashboard."
+    }
+  },
+  "integrations": {
+    "overline": "Integrations",
+    "title": "Plays nice with the tools you already use.",
+    "subtitle": "Connect your channels in a few clicks. Everything stays centralized in AfroBoost."
+  },
+  "pricing": {
+    "overline": "Simple pricing",
+    "title": "A plan for every stage.",
+    "subtitle": "15-day free trial on every plan. No credit card required.",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualBadge": "−15%",
+    "perMonth": "/mo",
+    "perYear": "/yr",
+    "popular": "Most popular",
+    "comingSoon": "Coming soon",
+    "cta": "Start free trial",
+    "ctaSoon": "Notify me at launch",
+    "plans": {
+      "discovery": {
+        "name": "Discovery",
+        "tagline": "Start with peace of mind.",
+        "f1": "12 AI posts / month",
+        "f2": "Phone agent — 200 calls",
+        "f3": "Unified multi-channel inbox",
+        "f4": "CRM up to 500 customers",
+        "f5": "Email support"
+      },
+      "performance": {
+        "name": "Performance",
+        "tagline": "The plan that scales.",
+        "f1": "Unlimited posts",
+        "f2": "AI agent + smart transfers",
+        "f3": "Auto Google review replies",
+        "f4": "Weekly AI report",
+        "f5": "Unlimited CRM",
+        "f6": "Priority support"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "For multi-location businesses.",
+        "f1": "Everything in Performance, plus",
+        "f2": "Multi-location",
+        "f3": "Advanced analytics",
+        "f4": "24/7 priority support",
+        "f5": "White-glove onboarding"
+      }
+    },
+    "guarantee": "+20% revenue guarantee in 90 days — or a full refund."
+  },
+  "founders": {
+    "overline": "The founders",
+    "title": "An AI that speaks your language and understands your culture.",
+    "body1": "AfroBoost was born in Montreal, out of conversations with Afro-Caribbean restaurant owners and shopkeepers who spent their evenings writing posts instead of being with their families — and who missed calls because they were on service.",
+    "body2": "We're building the tool we wished we had: an AI that understands Creole dishes, Congolese celebrations, Friday-night specials. Designed for the diaspora, funded by the diaspora.",
+    "p1Name": "Patrick Kamunga",
+    "p1Role": "CEO & Co-founder",
+    "p2Name": "Deborah",
+    "p2Role": "COO & Co-founder",
+    "location": "Montreal, Canada"
+  },
+  "testimonials": {
+    "overline": "Trusted by early users",
+    "title": "What real owners say.",
+    "items": {
+      "t1Quote": "I don't write posts at night anymore. The AI drafts, I approve in 30 seconds. I got my weekends back.",
+      "t1Name": "Marie L.",
+      "t1Role": "Creole restaurant · Montreal",
+      "t2Quote": "The agent answers during service. We doubled Thursday reservations without hiring.",
+      "t2Name": "Jean-Paul N.",
+      "t2Role": "Lounge bar · Laval",
+      "t3Quote": "Monday's report tells me exactly what to push this week. My sales went up 23%.",
+      "t3Name": "Aïcha D.",
+      "t3Role": "African grocery · Brossard"
+    }
+  },
+  "faq": {
+    "overline": "Frequently asked",
+    "title": "Everything you want to know.",
+    "items": {
+      "q1": "How does the 15-day free trial work?",
+      "a1": "Download the app, create your account, pick a plan. No card required during the trial. You can cancel anytime from the settings before the period ends.",
+      "q2": "Which languages does the phone agent support?",
+      "a2": "French and English are available today. Haitian Creole, Lingala, and Swahili are coming in the next few months.",
+      "q3": "Is my data safe?",
+      "a3": "Your data lives in Canada, encrypted at rest and in transit. We never sell your data. GDPR and Quebec Law 25 compliant.",
+      "q4": "Which channels can I connect?",
+      "a4": "Facebook, Instagram, Google Business Profile, WhatsApp Business, SMS, Google Calendar. More channels added every quarter.",
+      "q5": "Can I switch plans anytime?",
+      "a5": "Yes. Upgrade or downgrade from settings. Changes take effect on the next billing period.",
+      "q6": "What's the +20% guarantee?",
+      "a6": "If you follow the AI's weekly recommendations for 90 days and don't see +20% revenue, we refund your full subscription.",
+      "q7": "Do I need to be tech-savvy?",
+      "a7": "No. If you can use WhatsApp, you can use AfroBoost. Onboarding takes 3 minutes and the AI handles the rest.",
+      "q8": "Is there a commitment?",
+      "a8": "None. It's month-to-month. Cancel whenever, no fees or questions."
+    }
+  },
+  "finalCta": {
+    "overline": "Ready to grow?",
+    "title": "Join the owners who let AI do the work for them.",
+    "subtitle": "15 days free. No card required. Cancel in one click."
+  },
+  "footer": {
+    "tagline": "The AI that speaks your language, understands your culture, and grows your business.",
+    "madeIn": "Made in Montreal with ❤️ for the diaspora.",
+    "rights": "All rights reserved.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "how": "How it works",
+      "pricing": "Pricing",
+      "faq": "FAQ"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  }
+}

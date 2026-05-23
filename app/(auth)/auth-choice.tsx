@@ -22,6 +22,12 @@ export default function AuthChoice() {
         colors={[c.primary + '33', c.background, c.background] as [string, string, string]}
         style={StyleSheet.absoluteFill}
       />
+      <LinearGradient
+        colors={[c.accent + '22', 'transparent'] as [string, string]}
+        start={{ x: 1, y: 0 }}
+        end={{ x: 0, y: 1 }}
+        style={StyleSheet.absoluteFill}
+      />
       <KenteTexture tone="mixed" opacity={0.08} />
       <FloatingBack />
 
@@ -35,7 +41,7 @@ export default function AuthChoice() {
         }}
       >
         <Animated.View entering={FadeInDown.duration(500)} style={{ gap: 16 }}>
-          <Logo width={180} />
+          <Logo width={300} />
           <Text variant="overline" color="mutedFg">{t('auth.choose.overline')}</Text>
           <Text variant="displayLg" style={{ fontSize: 48, lineHeight: 52 }}>
             {t('auth.choose.titleStart')}{'\n'}

@@ -31,6 +31,7 @@ export function KpiTile({
   large?: boolean;
 }) {
   const { c } = useTheme();
+  const isAccent = tone === 'accent';
   return (
     <Animated.View
       entering={FadeInDown.delay(delay).springify().damping(18)}
@@ -40,12 +41,14 @@ export function KpiTile({
         backgroundColor: c.surfaceElevated,
         borderRadius: radius.lg,
         borderWidth: 1,
-        borderColor: c.border,
+        borderColor: isAccent ? c.accentMuted : c.border,
+        borderTopWidth: isAccent ? 2 : 1,
+        borderTopColor: isAccent ? c.accent : c.border,
         gap: 6,
         minWidth: 0,
       }}
     >
-      <Text variant="overline" color="mutedFg">{label}</Text>
+      <Text variant="overline" style={{ color: isAccent ? c.accent : c.mutedFg }}>{label}</Text>
       <AnimatedNumber
         value={value}
         prefix={prefix}

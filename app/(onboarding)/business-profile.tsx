@@ -34,7 +34,7 @@ export default function BusinessProfile() {
       <FloatingBack />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 20, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 20 }}>
         <View style={{ alignItems: 'flex-start' }}>
-          <Logo width={120} />
+          <Logo width={300} />
         </View>
         <View style={{ gap: 6 }}>
           <Text variant="overline" color="mutedFg">Étape {step + 1} sur {TOTAL} · {STEP_TITLES[step]}</Text>

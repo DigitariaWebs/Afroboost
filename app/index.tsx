@@ -8,6 +8,6 @@ export default function Index() {
   const onboarded = useOnboardingStore((s) => s.isComplete);
 
   if (!isAuth) return <Redirect href="/(auth)/welcome" />;
-  if (!onboarded) return <Redirect href="/(onboarding)/welcome-video" />;
+  if (!onboarded) return <Redirect href="/(onboarding)/business-profile" />;
   return <Redirect href="/(tabs)" />;
 }

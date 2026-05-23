@@ -43,7 +43,7 @@
     },
     "signUp": {
       "title": "Create your account",
-      "subtitle": "Welcome to AfroLink",
+      "subtitle": "Welcome to AfroBoost",
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "confirmLabel": "Confirm password",
@@ -90,7 +90,7 @@
   },
   "onboarding": {
     "welcomeVideo": {
-      "title": "Welcome to AfroLink",
+      "title": "Welcome to AfroBoost",
       "subtitle": "Discover the app in 1:30",
       "duration": "1:30"
     },

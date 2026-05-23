@@ -27,7 +27,7 @@ export default function Help() {
   const { c } = useTheme();
   const [draft, setDraft] = useState('');
   const [messages, setMessages] = useState<{ id: string; from: 'user' | 'ai'; text: string }[]>([
-    { id: 'init', from: 'ai', text: 'Bonjour ! Posez-moi une question sur AfroLink.' },
+    { id: 'init', from: 'ai', text: 'Bonjour ! Posez-moi une question sur AfroBoost.' },
   ]);
   const [typing, setTyping] = useState(false);
   const ref = useRef<ScrollView>(null);

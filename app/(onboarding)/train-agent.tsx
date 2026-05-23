@@ -27,7 +27,7 @@ export default function TrainAgent() {
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <FloatingBack />
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 22 }} keyboardShouldPersistTaps="handled">
-        <Logo width={120} />
+        <Logo width={300} />
         <View style={{ gap: 8 }}>
           <Text variant="overline" color="mutedFg">Agent IA téléphonique</Text>
           <Text variant="display" style={{ fontSize: 34 }}>Donnez-lui{'\n'}<Text variant="display" style={{ color: c.accent, fontSize: 34 }}>une voix.</Text></Text>
@@ -70,7 +70,7 @@ export default function TrainAgent() {
         </Pressable>
 
         <View style={{ flex: 1 }} />
-        <Button title={t('common.continue')} fullWidth pill={false} onPress={() => router.push('/(onboarding)/done')} />
+        <Button title={t('common.continue')} fullWidth pill={false} onPress={() => router.push('/(auth)/plan-select')} />
       </ScrollView>
       <AgentTestSheet open={open} onClose={() => setOpen(false)} businessName={businessName} />
     </View>

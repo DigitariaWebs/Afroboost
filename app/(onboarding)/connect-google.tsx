@@ -19,7 +19,7 @@ export default function ConnectGoogle() {
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <FloatingBack />
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 24 }}>
-        <Logo width={120} />
+        <Logo width={300} />
         <View style={{ gap: 8 }}>
           <Text variant="overline" color="mutedFg">Avis Google</Text>
           <Text variant="display" style={{ fontSize: 36 }}>Vos avis,{'\n'}<Text variant="display" style={{ color: c.accent, fontSize: 36 }}>répondus.</Text></Text>

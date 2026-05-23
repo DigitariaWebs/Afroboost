@@ -42,10 +42,14 @@ export default function Home() {
       {/* Hero */}
       <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 12 }}>
         <View style={{ flex: 1 }}>
-          <Text variant="overline" color="mutedFg">{mockBusiness.name}</Text>
+          <Text variant="overline" style={{ color: c.accent }}>{mockBusiness.name}</Text>
           <Text variant="displayLg" style={{ marginTop: 4 }}>Bonjour,</Text>
           <Text variant="displayLg" style={{ marginTop: -8, color: c.accent }}>{firstName}.</Text>
-          <Text color="muted" style={{ marginTop: 8 }}>Voici votre semaine.</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 8 }}>
+            <View style={{ width: 18, height: 2, borderRadius: 2, backgroundColor: c.accent }} />
+            <View style={{ width: 6, height: 2, borderRadius: 2, backgroundColor: c.accentMuted }} />
+            <Text color="muted">Voici votre semaine.</Text>
+          </View>
         </View>
         <Pressable onPress={() => router.push('/settings')}>
           <Avatar name={user?.name || 'Patrick'} size="lg" ring />

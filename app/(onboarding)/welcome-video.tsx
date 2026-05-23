@@ -20,12 +20,12 @@ export default function WelcomeVideo() {
   return (
     <View style={{ flex: 1, backgroundColor: c.background }}>
       <View style={{ alignItems: 'center', paddingTop: insets.top + 8, paddingHorizontal: 20 }}>
-        <Logo width={120} />
+        <Logo width={300} />
       </View>
       <View style={{ flex: 1, padding: 24, justifyContent: 'space-between' }}>
         <View style={{ gap: 12, marginTop: 12 }}>
           <Text variant="overline" color="mutedFg">Bienvenue</Text>
-          <Text variant="display">Découvrez{'\n'}<Text variant="display" style={{ color: c.accent }}>AfroLink.</Text></Text>
+          <Text variant="display">Découvrez{'\n'}<Text variant="display" style={{ color: c.accent }}>AfroBoost.</Text></Text>
           <Text variant="serifItalic" color="muted" style={{ fontSize: 18 }}>{t('onboarding.welcomeVideo.subtitle')}</Text>
         </View>
 

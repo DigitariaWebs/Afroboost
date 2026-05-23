@@ -83,7 +83,7 @@ function SlideItem({
       </View>
       <Animated.View style={overlineStyle}>
         <Text variant="overline" color="mutedFg" style={{ marginBottom: 12 }}>
-          AfroLink — pour les entrepreneurs.es
+          AfroBoost — pour les entrepreneurs.es
         </Text>
       </Animated.View>
       <Animated.View style={titleStyle}>
@@ -206,12 +206,28 @@ export default function Welcome() {
       <Animated.View
         entering={FadeInDown.duration(500)}
         style={{
+          width: '100%',
           alignItems: 'center',
+          justifyContent: 'center',
           padding: 20,
           paddingTop: insets.top + 8,
         }}
       >
-        <Logo width={130} />
+        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+          <LinearGradient
+            colors={[c.accent + '33', 'transparent']}
+            start={{ x: 0.5, y: 0.5 }}
+            end={{ x: 0.5, y: 1 }}
+            style={{
+              position: 'absolute',
+              width: 320,
+              height: 140,
+              borderRadius: 999,
+              opacity: 0.9,
+            }}
+          />
+          <Logo width={300} />
+        </View>
       </Animated.View>
 
       <Animated.FlatList

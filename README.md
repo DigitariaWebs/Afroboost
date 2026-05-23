@@ -1,6 +1,6 @@
-# AfroLink — Mobile prototype
+# AfroBoost — Mobile prototype
 
-Frontend-only Expo prototype for **AfroLink**, a B2B SaaS for Afro-Caribbean entrepreneurs in Quebec (restaurants, bars, grocery-restaurants, solo entrepreneurs). Built to validate UX/design with the client (Patrick) before any backend work.
+Frontend-only Expo prototype for **AfroBoost**, a B2B SaaS for Afro-Caribbean entrepreneurs in Quebec (restaurants, bars, grocery-restaurants, solo entrepreneurs). Built to validate UX/design with the client (Patrick) before any backend work.
 
 > ⚠️ **Everything is mocked.** No real APIs, no real auth, no real OAuth, no real payments. All data lives in `src/mocks/` and every async call goes through `src/lib/mock-api.ts`.
 
@@ -61,7 +61,7 @@ Sign in with any email and password — the prototype accepts everything.
 ## Project structure
 
 ```
-afrolink/
+afroboost/
 ├── app/                          # expo-router file-based routes
 │   ├── _layout.tsx               # Root: providers (Theme, Query, i18n, GestureHandler, SafeArea, Toast)
 │   ├── index.tsx                 # Splash redirect (auth → onboarding → tabs)

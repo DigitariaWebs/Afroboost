@@ -28,7 +28,7 @@ export default function PaymentMock() {
     setLoading(true);
     try {
       await mockMutation(null, { ms: 1400 });
-      router.replace('/(onboarding)/welcome-video');
+      router.replace('/(onboarding)/done');
     } finally {
       setLoading(false);
     }

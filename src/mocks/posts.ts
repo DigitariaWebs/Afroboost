@@ -1,6 +1,6 @@
 import type { Post } from '@/types';
 
-const img = (seed: number) => `https://picsum.photos/seed/afrolink-${seed}/600/600`;
+const img = (seed: number) => `https://picsum.photos/seed/afroboost-${seed}/600/600`;
 
 const captions = [
   'Ce soir, notre poulet boucané vous attend 🍗🔥 Réservez votre table !',

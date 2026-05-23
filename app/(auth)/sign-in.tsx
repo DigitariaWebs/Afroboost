@@ -35,7 +35,7 @@ export default function SignIn() {
       <FloatingBack />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingTop: insets.top + 56, paddingBottom: insets.bottom + 32, gap: 32 }} keyboardShouldPersistTaps="handled">
         <View style={{ gap: 16 }}>
-          <Logo width={150} />
+          <Logo width={300} />
           <Text variant="overline" color="mutedFg">Bon retour</Text>
           <Text variant="displayLg" style={{ fontSize: 48, lineHeight: 52 }}>Heureux de{'\n'}vous <Text variant="displayLg" style={{ color: c.accent, fontSize: 48, lineHeight: 52 }}>revoir.</Text></Text>
         </View>

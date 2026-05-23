@@ -28,10 +28,16 @@ export default function Done() {
         colors={[c.primary + '33', c.background, c.background] as [string, string, string]}
         style={StyleSheet.absoluteFill}
       />
-      <KenteTexture tone="emerald" opacity={0.07} />
+      <LinearGradient
+        colors={[c.accent + '2A', 'transparent'] as [string, string]}
+        start={{ x: 0.5, y: 1 }}
+        end={{ x: 0.5, y: 0.3 }}
+        style={StyleSheet.absoluteFill}
+      />
+      <KenteTexture tone="mixed" opacity={0.07} />
       <View style={{ flex: 1, padding: 32, paddingBottom: insets.bottom + 24, paddingTop: insets.top + 24 }}>
         <View style={{ alignItems: 'center' }}>
-          <Logo width={140} />
+          <Logo width={300} />
         </View>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 28 }}>
           <AnimatedCheckmark size={140} />
@@ -43,7 +49,7 @@ export default function Done() {
             </Text>
           </View>
         </View>
-        <Button title={t('onboarding.done.cta')} fullWidth pill={false} onPress={() => router.replace('/(tabs)')} />
+        <Button title={t('onboarding.done.cta')} variant="gold" fullWidth pill={false} onPress={() => router.replace('/(tabs)')} />
       </View>
     </View>
   );

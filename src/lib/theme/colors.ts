@@ -11,9 +11,12 @@ export const colors = {
     primaryFg: '#F2F7F4',
     primaryMuted: '#15643E',
 
-    accent: '#E5B040',
+    accent: '#E8B84A',
     accentFg: '#1A1410',
-    accentMuted: '#8C6A26',
+    accentMuted: '#A57A2D',
+    accentSoft: '#3A2E14',
+    accentGradientFrom: '#F2C95C',
+    accentGradientTo: '#B8842A',
 
     deep: '#5B2A4F',
 
@@ -22,12 +25,12 @@ export const colors = {
     mutedFg: '#6F857B',
 
     success: '#3DAA68',
-    warning: '#E5B040',
+    warning: '#E8B84A',
     danger: '#E25C5C',
     info: '#6FA8E0',
 
     aiGlowFrom: '#1F8A55',
-    aiGlowTo: '#E5B040',
+    aiGlowTo: '#E8B84A',
 
     overlay: 'rgba(7,12,9,0.72)',
   },
@@ -43,9 +46,12 @@ export const colors = {
     primaryFg: '#FFFFFF',
     primaryMuted: '#9CC6B0',
 
-    accent: '#B8852A',
+    accent: '#C29234',
     accentFg: '#FFFFFF',
-    accentMuted: '#E5C98F',
+    accentMuted: '#E8CE94',
+    accentSoft: '#FBF1D9',
+    accentGradientFrom: '#D9A845',
+    accentGradientTo: '#9C701F',
 
     deep: '#5B2A4F',
 
@@ -54,12 +60,12 @@ export const colors = {
     mutedFg: '#8B968E',
 
     success: '#0F7B3A',
-    warning: '#B8852A',
+    warning: '#C29234',
     danger: '#B81B1B',
     info: '#2563EB',
 
     aiGlowFrom: '#176B43',
-    aiGlowTo: '#B8852A',
+    aiGlowTo: '#C29234',
 
     overlay: 'rgba(20,30,24,0.45)',
   },

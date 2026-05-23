@@ -1,10 +1,11 @@
 import React from 'react';
 import { Pressable, ActivityIndicator, View, StyleSheet, PressableProps } from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Text } from './Text';
 import { useTheme, radius } from '@/lib/theme';
 
-type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
+type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'gold';
 type Size = 'sm' | 'md' | 'lg';
 
 export type ButtonProps = Omit<PressableProps, 'children'> & {
@@ -49,8 +50,26 @@ export function Button({
     outline: { bg: 'transparent', fg: c.foreground, border: c.borderStrong },
     ghost: { bg: 'transparent', fg: c.foreground },
     destructive: { bg: c.danger, fg: '#fff' },
+    gold: { bg: c.accent, fg: c.accentFg },
   };
   const p = palette[variant];
+  const isGold = variant === 'gold';
+
+  const inner = loading ? (
+    <ActivityIndicator color={p.fg} />
+  ) : (
+    <View style={styles.row}>
+      {leftIcon ? <View style={styles.icon}>{leftIcon}</View> : null}
+      {title ? (
+        <Text style={{ color: p.fg, fontSize: fontSizes[size], fontFamily: 'Inter_600SemiBold', letterSpacing: 0.1 }}>
+          {title}
+        </Text>
+      ) : (
+        children
+      )}
+      {rightIcon ? <View style={styles.icon}>{rightIcon}</View> : null}
+    </View>
+  );
 
   return (
     <Animated.View style={[fullWidth && styles.fullWidth, aStyle]}>
@@ -69,31 +88,30 @@ export function Button({
           {
             height: heights[size],
             paddingHorizontal: paddingsX[size],
-            backgroundColor: p.bg,
+            backgroundColor: isGold ? 'transparent' : p.bg,
             borderColor: p.border ?? 'transparent',
             borderWidth: p.border ? 1 : 0,
             borderRadius: pill ? radius.full : radius.md,
             opacity: disabled || loading ? 0.55 : 1,
+            overflow: 'hidden',
           },
           styles.btn,
           style as any,
         ]}
         {...rest}
       >
-        {loading ? (
-          <ActivityIndicator color={p.fg} />
+        {isGold ? (
+          <>
+            <LinearGradient
+              colors={[c.accentGradientFrom, c.accent, c.accentGradientTo]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={StyleSheet.absoluteFill}
+            />
+            {inner}
+          </>
         ) : (
-          <View style={styles.row}>
-            {leftIcon ? <View style={styles.icon}>{leftIcon}</View> : null}
-            {title ? (
-              <Text style={{ color: p.fg, fontSize: fontSizes[size], fontFamily: 'Inter_600SemiBold', letterSpacing: 0.1 }}>
-                {title}
-              </Text>
-            ) : (
-              children
-            )}
-            {rightIcon ? <View style={styles.icon}>{rightIcon}</View> : null}
-          </View>
+          inner
         )}
       </Pressable>
     </Animated.View>

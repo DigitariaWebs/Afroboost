@@ -6,9 +6,10 @@ export type CardProps = ViewProps & {
   padding?: number;
   elevated?: boolean;
   tone?: 'default' | 'high' | 'flat';
+  highlight?: boolean;
 };
 
-export function Card({ padding = 18, elevated, tone = 'default', style, children, ...rest }: CardProps) {
+export function Card({ padding = 18, elevated, tone = 'default', highlight, style, children, ...rest }: CardProps) {
   const { c } = useTheme();
   const bg = tone === 'high' ? c.surfaceHigh : tone === 'flat' ? c.surface : c.surfaceElevated;
   return (
@@ -19,8 +20,12 @@ export function Card({ padding = 18, elevated, tone = 'default', style, children
           backgroundColor: bg,
           borderRadius: radius.lg,
           borderWidth: 1,
-          borderColor: c.border,
+          borderColor: highlight ? c.accentMuted : c.border,
           padding,
+        },
+        highlight && {
+          borderLeftWidth: 3,
+          borderLeftColor: c.accent,
         },
         elevated && {
           shadowColor: '#000',

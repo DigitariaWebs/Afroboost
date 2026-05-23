@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "afrolink",
-    "slug": "afrolink",
+    "name": "afroboost",
+    "slug": "afroboost",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "afrolink",
+    "scheme": "afroboost",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true

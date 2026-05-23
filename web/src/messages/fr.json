@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "AfroBoost — l'IA des entrepreneurs afro-caribéens",
+    "description": "L'IA qui publie vos posts, répond à vos appels 24h/24 et vous dit ce qui fonctionne. Pour les restaurants, bars et commerces de la diaspora."
+  },
+  "banner": {
+    "text": "Essai gratuit 15 jours · Aucune carte requise · Garantie +20 % de croissance"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "how": "Comment ça marche",
+    "pricing": "Tarifs",
+    "faq": "FAQ",
+    "download": "Télécharger"
+  },
+  "hero": {
+    "eyebrow": "AfroBoost — l'IA des entrepreneurs.es",
+    "titleStart": "Gagnez 10 heures par semaine.",
+    "titleAccent": "Faites grandir votre business.",
+    "subtitle": "L'IA qui publie vos posts, répond à vos appels 24h/24 et vous dit ce qui fonctionne — pensée pour les restaurants, bars et commerces de la diaspora afro-caribéenne.",
+    "primaryCta": "Télécharger l'app",
+    "secondaryCta": "Voir les fonctionnalités",
+    "trust1": "+20 % de revenus garantis",
+    "trust2": "15 jours d'essai gratuit",
+    "trust3": "FR · EN · Créole bientôt",
+    "appStoreTop": "Télécharger sur",
+    "appStoreName": "App Store",
+    "playTop": "Disponible sur",
+    "playName": "Google Play"
+  },
+  "pillars": {
+    "overline": "3 piliers, 1 application",
+    "title": "Tout ce qu'il vous faut, dans une seule app.",
+    "subtitle": "AfroBoost remplace une demi-douzaine d'outils — création de contenu, standard téléphonique, CRM, analytics — et les fait travailler ensemble.",
+    "content": {
+      "label": "Pilier 1 — Marketing",
+      "title": "Publiez sans effort.",
+      "body": "Une IA qui crée et publie vos posts Facebook et Instagram dans votre voix, votre ton et votre langue.",
+      "demoCaption": "Promo créole — vendredi soir",
+      "demoTime": "Programmé · 18:00",
+      "demoTone": "Ton chaleureux"
+    },
+    "agent": {
+      "label": "Pilier 2 — Service client",
+      "title": "Ne ratez plus aucun client.",
+      "body": "Un agent IA répond aux appels 24h/24, prend les réservations et vous transfère quand c'est important.",
+      "demoLine1": "Bonjour, c'est l'agent virtuel d'AfroBoost !",
+      "demoLine2": "Réserver pour 4 personnes",
+      "demoLine3": "Parfait, à quelle heure ?",
+      "demoBadge": "🤖 Géré par IA"
+    },
+    "intel": {
+      "label": "Pilier 3 — Décisions",
+      "title": "Décidez avec les données.",
+      "body": "Un rapport hebdomadaire et un assistant chat qui transforment vos données en actions claires.",
+      "demoKpi1": "Revenus semaine",
+      "demoKpi2": "Appels gérés",
+      "demoTrend": "vs semaine passée"
+    }
+  },
+  "how": {
+    "overline": "Démarrage en 3 minutes",
+    "title": "Comment ça marche.",
+    "subtitle": "Pas de configuration compliquée. L'IA apprend votre business pendant que vous prenez un café.",
+    "steps": {
+      "s1Number": "01",
+      "s1Title": "Connectez vos comptes",
+      "s1Body": "Facebook, Instagram, Google Business, calendrier. Trois clics, sans copier-coller.",
+      "s2Number": "02",
+      "s2Title": "Entraînez votre agent",
+      "s2Body": "Donnez-lui votre message d'accueil, vos services, votre ton. L'IA s'adapte à votre voix.",
+      "s3Number": "03",
+      "s3Title": "Regardez grandir",
+      "s3Body": "Posts publiés, appels gérés, clients fidélisés. Vous suivez tout depuis le tableau de bord."
+    }
+  },
+  "integrations": {
+    "overline": "Intégrations",
+    "title": "Compatible avec les outils que vous utilisez déjà.",
+    "subtitle": "Branchez vos canaux en quelques clics. Tout reste centralisé dans AfroBoost."
+  },
+  "pricing": {
+    "overline": "Tarification simple",
+    "title": "Un forfait pour chaque étape.",
+    "subtitle": "Essai gratuit de 15 jours sur tous les forfaits. Aucune carte requise.",
+    "monthly": "Mensuel",
+    "annual": "Annuel",
+    "annualBadge": "−15 %",
+    "perMonth": "/mois",
+    "perYear": "/an",
+    "popular": "Le plus populaire",
+    "comingSoon": "Bientôt disponible",
+    "cta": "Démarrer l'essai gratuit",
+    "ctaSoon": "M'informer du lancement",
+    "plans": {
+      "discovery": {
+        "name": "Découverte",
+        "tagline": "Pour démarrer sereinement.",
+        "f1": "12 publications IA / mois",
+        "f2": "Agent téléphonique 200 appels",
+        "f3": "Inbox unifiée multi-canaux",
+        "f4": "CRM jusqu'à 500 clients",
+        "f5": "Support email"
+      },
+      "performance": {
+        "name": "Performance",
+        "tagline": "Le forfait qui fait grandir.",
+        "f1": "Publications illimitées",
+        "f2": "Agent IA + transferts intelligents",
+        "f3": "Réponses Avis Google automatiques",
+        "f4": "Rapport hebdomadaire IA",
+        "f5": "CRM illimité",
+        "f6": "Support prioritaire"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Pour multi-établissements.",
+        "f1": "Tout Performance, et plus",
+        "f2": "Multi-établissements",
+        "f3": "Analyses avancées",
+        "f4": "Support prioritaire 24/7",
+        "f5": "Onboarding personnalisé"
+      }
+    },
+    "guarantee": "Garantie +20 % de revenus en 90 jours — ou remboursement intégral."
+  },
+  "founders": {
+    "overline": "Les fondateurs",
+    "title": "Une IA qui parle votre langue, comprend votre culture.",
+    "body1": "AfroBoost est né à Montréal, des conversations avec des restaurateurs et commerçants afro-caribéens qui passaient leurs soirées à écrire des posts au lieu de profiter de leur famille — et qui rataient des appels parce qu'ils étaient en service.",
+    "body2": "Nous construisons l'outil que nous aurions voulu avoir : une IA qui comprend les plats créoles, les fêtes congolaises, les promos du vendredi soir. Pensée pour la diaspora, financée par la diaspora.",
+    "p1Name": "Patrick Kamunga",
+    "p1Role": "CEO & Co-fondateur",
+    "p2Name": "Deborah",
+    "p2Role": "COO & Co-fondatrice",
+    "location": "Montréal, Canada"
+  },
+  "testimonials": {
+    "overline": "Ils nous font confiance",
+    "title": "Ce que disent les premiers utilisateurs.",
+    "items": {
+      "t1Quote": "Je n'écris plus mes posts le soir. L'IA propose, je valide en 30 secondes. J'ai retrouvé mes weekends.",
+      "t1Name": "Marie L.",
+      "t1Role": "Restaurant créole · Montréal",
+      "t2Quote": "L'agent répond pendant le service. On a doublé les réservations du jeudi sans embaucher.",
+      "t2Name": "Jean-Paul N.",
+      "t2Role": "Bar lounge · Laval",
+      "t3Quote": "Le rapport du lundi matin me dit exactement quoi pousser cette semaine. Mes ventes ont grimpé de 23 %.",
+      "t3Name": "Aïcha D.",
+      "t3Role": "Épicerie africaine · Brossard"
+    }
+  },
+  "faq": {
+    "overline": "Questions fréquentes",
+    "title": "Tout ce que vous voulez savoir.",
+    "items": {
+      "q1": "Comment fonctionne l'essai gratuit de 15 jours ?",
+      "a1": "Téléchargez l'app, créez votre compte et choisissez un forfait. Aucune carte requise pendant l'essai. Vous pouvez annuler à tout moment depuis les paramètres avant la fin de la période.",
+      "q2": "Dans quelles langues fonctionne l'agent téléphonique ?",
+      "a2": "Français et anglais sont disponibles dès aujourd'hui. Le créole haïtien, le lingala et le swahili arrivent dans les prochains mois.",
+      "q3": "Mes données sont-elles en sécurité ?",
+      "a3": "Vos données sont hébergées au Canada, chiffrées au repos et en transit. Nous ne vendons jamais vos données. Conformité RGPD et Loi 25 du Québec.",
+      "q4": "Quels canaux puis-je connecter ?",
+      "a4": "Facebook, Instagram, Profil Google d'entreprise, WhatsApp Business, SMS, calendrier Google. Plus de canaux arrivent chaque trimestre.",
+      "q5": "Puis-je changer de forfait à tout moment ?",
+      "a5": "Oui. Vous pouvez passer au forfait supérieur ou inférieur depuis les paramètres. Les changements prennent effet à la prochaine période de facturation.",
+      "q6": "Qu'est-ce que la garantie +20 % ?",
+      "a6": "Si vous suivez les recommandations hebdomadaires de l'IA pendant 90 jours et ne voyez pas +20 % de revenus, nous vous remboursons intégralement l'abonnement.",
+      "q7": "Faut-il connaître la tech ?",
+      "a7": "Non. Si vous savez utiliser WhatsApp, vous saurez utiliser AfroBoost. L'onboarding prend 3 minutes et l'IA s'occupe du reste.",
+      "q8": "Y a-t-il un engagement ?",
+      "a8": "Aucun. C'est du mois en mois. Annulez quand vous voulez, sans frais ni questions."
+    }
+  },
+  "finalCta": {
+    "overline": "Prêt à grandir ?",
+    "title": "Rejoignez les entrepreneurs qui ont laissé l'IA travailler pour eux.",
+    "subtitle": "15 jours gratuits. Aucune carte requise. Annulez en un clic."
+  },
+  "footer": {
+    "tagline": "L'IA qui parle votre langue, comprend votre culture, et fait croître votre business.",
+    "madeIn": "Conçu à Montréal avec ❤️ pour la diaspora.",
+    "rights": "Tous droits réservés.",
+    "product": {
+      "title": "Produit",
+      "features": "Fonctionnalités",
+      "how": "Comment ça marche",
+      "pricing": "Tarifs",
+      "faq": "FAQ"
+    },
+    "company": {
+      "title": "Entreprise",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Légal",
+      "privacy": "Confidentialité",
+      "terms": "Conditions"
+    }
+  }
+}

@@ -144,7 +144,7 @@ export default function Generate() {
             </View>
             <Card padding={0} style={{ overflow: 'hidden' }}>
               {imgReady ? (
-                <Image source={{ uri: 'https://picsum.photos/seed/afrolink-gen/800/800' }} style={{ width: '100%', aspectRatio: 1.2 }} />
+                <Image source={{ uri: 'https://picsum.photos/seed/afroboost-gen/800/800' }} style={{ width: '100%', aspectRatio: 1.2 }} />
               ) : (
                 <Skeleton height={260} />
               )}
@@ -162,7 +162,7 @@ export default function Generate() {
               <Text variant="h1" style={{ marginTop: 4 }}>{t('content.generate.stepPreview')}</Text>
             </View>
             <Card padding={0} style={{ overflow: 'hidden' }}>
-              <Image source={{ uri: 'https://picsum.photos/seed/afrolink-gen/800/800' }} style={{ width: '100%', aspectRatio: 1.2 }} />
+              <Image source={{ uri: 'https://picsum.photos/seed/afroboost-gen/800/800' }} style={{ width: '100%', aspectRatio: 1.2 }} />
               <View style={{ padding: 14, gap: 12 }}>
                 <Input variant="filled" multiline value={caption} onChangeText={setCaption} />
                 <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>

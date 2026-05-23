@@ -130,6 +130,7 @@ export default function PlanSelect() {
         <View style={{ gap: 8, marginTop: 4 }}>
           <Button
             title={`Continuer avec ${planLabel[plan]}`}
+            variant="gold"
             onPress={() => router.push({ pathname: '/(auth)/payment-mock', params: { plan, annual: annual ? '1' : '0' } })}
             fullWidth
           />

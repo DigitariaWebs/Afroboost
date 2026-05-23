@@ -26,6 +26,37 @@ export function Avatar({ name, size = 'md', ring }: { name: string; size?: keyof
   const bg = hashColor(name, palette);
   const dim = sizes[size];
   const fontSize = dim < 36 ? 11 : dim < 50 ? 14 : dim < 70 ? 18 : 28;
+  if (ring) {
+    return (
+      <View
+        style={{
+          width: dim + 6,
+          height: dim + 6,
+          borderRadius: radius.full,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: c.accent + '22',
+          borderWidth: 1.5,
+          borderColor: c.accent,
+        }}
+      >
+        <View
+          style={{
+            width: dim,
+            height: dim,
+            backgroundColor: bg,
+            borderRadius: radius.full,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderWidth: 1,
+            borderColor: c.accentGradientFrom,
+          }}
+        >
+          <Text style={{ color: '#fff', fontSize, fontFamily: 'InstrumentSerif_400Regular' }}>{initials(name)}</Text>
+        </View>
+      </View>
+    );
+  }
   return (
     <View
       style={{
@@ -35,8 +66,6 @@ export function Avatar({ name, size = 'md', ring }: { name: string; size?: keyof
         borderRadius: radius.full,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: ring ? 2 : 0,
-        borderColor: ring ? c.accent : 'transparent',
       }}
     >
       <Text style={{ color: '#fff', fontSize, fontFamily: 'InstrumentSerif_400Regular' }}>{initials(name)}</Text>

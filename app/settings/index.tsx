@@ -91,7 +91,7 @@ export default function SettingsIndex() {
 
         <View style={{ alignItems: 'center', gap: 6, marginTop: 8 }}>
           <AIOrb size={28} />
-          <Text variant="caption" color="mutedFg">AfroLink · v1.0.0</Text>
+          <Text variant="caption" color="mutedFg">AfroBoost · v1.0.0</Text>
         </View>
       </ScrollView>
     </View>
