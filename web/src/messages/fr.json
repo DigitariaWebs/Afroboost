@@ -26,7 +26,20 @@
     "appStoreTop": "Télécharger sur",
     "appStoreName": "App Store",
     "playTop": "Disponible sur",
-    "playName": "Google Play"
+    "playName": "Google Play",
+    "typeIntro": "L'IA qui",
+    "typewriter": [
+      "publie vos posts.",
+      "répond à vos appels.",
+      "remplit vos tables.",
+      "fait grandir votre business."
+    ],
+    "statValue1": "10h",
+    "statLabel1": "économisées / semaine",
+    "statValue2": "24/7",
+    "statLabel2": "agent qui répond",
+    "statValue3": "+23%",
+    "statLabel3": "ventes en moyenne"
   },
   "pillars": {
     "overline": "3 piliers, 1 application",

@@ -27,27 +27,50 @@ export function SectionHeading({
   title,
   subtitle,
   align = 'left',
+  light = false,
 }: {
   overline?: string;
   title: string;
   subtitle?: string;
   align?: 'left' | 'center';
+  light?: boolean;
 }) {
+  const titleColor = light ? 'text-[#0E1A14]' : 'text-foreground';
+  const subtitleColor = light ? 'text-[#4A5750]' : 'text-muted';
+  const accentColor = light ? 'text-accent-muted' : 'text-accent';
+  const accentRule = light ? 'bg-accent-muted/60' : 'bg-accent/60';
+
   return (
     <div
       className={clsx(
-        'flex flex-col gap-3 mb-12',
+        'flex flex-col gap-3 mb-14',
         align === 'center' && 'items-center text-center',
       )}
     >
       {overline ? (
-        <span className="text-overline uppercase font-medium text-accent tracking-[0.18em]">
+        <span
+          className={clsx(
+            'inline-flex items-center gap-2 text-overline uppercase font-medium tracking-[0.22em]',
+            accentColor,
+          )}
+        >
+          <span className={clsx('h-px w-6', accentRule)} />
           {overline}
+          <span className={clsx('h-px w-6', accentRule)} />
         </span>
       ) : null}
-      <h2 className="font-serif text-display text-foreground max-w-3xl">{title}</h2>
+      <h2
+        className={clsx(
+          'font-display text-[2.5rem] sm:text-[3rem] leading-[1.05] tracking-[-0.035em] max-w-3xl',
+          titleColor,
+        )}
+      >
+        {title}
+      </h2>
       {subtitle ? (
-        <p className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed">{subtitle}</p>
+        <p className={clsx('text-base sm:text-lg max-w-2xl leading-relaxed', subtitleColor)}>
+          {subtitle}
+        </p>
       ) : null}
     </div>
   );

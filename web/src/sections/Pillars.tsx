@@ -1,7 +1,9 @@
 import { useTranslations } from 'next-intl';
 import { MessageSquareText, PhoneCall, LineChart, Sparkles, TrendingUp } from 'lucide-react';
-import { Section, SectionHeading } from '@/components/Section';
+import { Section } from '@/components/Section';
 import { GlowCard } from '@/components/GlowCard';
+import { Reveal } from '@/components/Reveal';
+import { IconDisc } from '@/components/IconDisc';
 
 function ContentDemo({ t }: { t: ReturnType<typeof useTranslations> }) {
   return (
@@ -69,6 +71,7 @@ export function Pillars() {
   const pillars = [
     {
       tone: 'emerald' as const,
+      disc: 'emerald' as const,
       icon: MessageSquareText,
       label: t('content.label'),
       title: t('content.title'),
@@ -77,6 +80,7 @@ export function Pillars() {
     },
     {
       tone: 'gold' as const,
+      disc: 'gold' as const,
       icon: PhoneCall,
       label: t('agent.label'),
       title: t('agent.title'),
@@ -85,6 +89,7 @@ export function Pillars() {
     },
     {
       tone: 'plum' as const,
+      disc: 'plum' as const,
       icon: LineChart,
       label: t('intel.label'),
       title: t('intel.title'),
@@ -94,32 +99,63 @@ export function Pillars() {
   ];
 
   return (
-    <Section id="features">
-      <SectionHeading
-        overline={t('overline')}
-        title={t('title')}
-        subtitle={t('subtitle')}
-        align="center"
+    <Section id="features" className="relative bg-white">
+      {/* Soft topo decorative lines */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 opacity-30"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(232,184,74,0.12) 0%, transparent 100%)',
+          maskImage: 'linear-gradient(180deg, #000, transparent)',
+          WebkitMaskImage: 'linear-gradient(180deg, #000, transparent)',
+        }}
       />
+
+      <Reveal direction="up">
+        <div className="flex flex-col items-center text-center gap-3 mb-14">
+          <span className="inline-flex items-center gap-2 text-overline uppercase font-medium text-accent-muted tracking-[0.22em]">
+            <span className="h-px w-6 bg-accent-muted/60" />
+            {t('overline')}
+            <span className="h-px w-6 bg-accent-muted/60" />
+          </span>
+          <h2 className="font-display text-[2.5rem] sm:text-[3rem] leading-[1.05] tracking-[-0.03em] text-[#0E1A14] max-w-3xl">
+            {t('title')}
+          </h2>
+          <p className="text-base sm:text-lg text-[#4A5750] max-w-2xl leading-relaxed">
+            {t('subtitle')}
+          </p>
+        </div>
+      </Reveal>
+
       <div className="grid gap-6 md:grid-cols-3">
-        {pillars.map((p) => {
+        {pillars.map((p, i) => {
           const Icon = p.icon;
           return (
-            <GlowCard key={p.title} tone={p.tone} className="h-full">
-              <div className="flex flex-col h-full gap-5">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-accent/30 bg-accent/10">
-                  <Icon className="h-5 w-5 text-accent" />
+            <Reveal key={p.title} direction="up" delay={i * 140}>
+              <GlowCard tone={p.tone} className="group h-full transition-transform duration-500 hover:-translate-y-1">
+                <div className="flex flex-col h-full gap-5">
+                  <div className="flex items-center justify-between">
+                    <IconDisc tone={p.disc} size="md">
+                      <Icon className="h-5 w-5" />
+                    </IconDisc>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-fg">
+                      0{i + 1} / 03
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-overline uppercase tracking-[0.18em] text-accent">
+                      {p.label}
+                    </p>
+                    <h3 className="font-display text-h1 sm:text-[1.6rem] leading-tight text-foreground">
+                      {p.title}
+                    </h3>
+                    <p className="text-body text-muted leading-relaxed">{p.body}</p>
+                  </div>
+                  <div className="mt-auto pt-2">{p.demo}</div>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-overline uppercase tracking-[0.18em] text-accent">
-                    {p.label}
-                  </p>
-                  <h3 className="font-serif text-h1 text-foreground">{p.title}</h3>
-                  <p className="text-body text-muted leading-relaxed">{p.body}</p>
-                </div>
-                <div className="mt-auto pt-2">{p.demo}</div>
-              </div>
-            </GlowCard>
+              </GlowCard>
+            </Reveal>
           );
         })}
       </div>

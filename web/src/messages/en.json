@@ -26,7 +26,20 @@
     "appStoreTop": "Download on the",
     "appStoreName": "App Store",
     "playTop": "Get it on",
-    "playName": "Google Play"
+    "playName": "Google Play",
+    "typeIntro": "The AI that",
+    "typewriter": [
+      "writes your posts.",
+      "answers your calls.",
+      "fills your tables.",
+      "grows your business."
+    ],
+    "statValue1": "10h",
+    "statLabel1": "saved / week",
+    "statValue2": "24/7",
+    "statLabel2": "agent on duty",
+    "statValue3": "+23%",
+    "statLabel3": "sales on average"
   },
   "pillars": {
     "overline": "3 pillars, 1 app",

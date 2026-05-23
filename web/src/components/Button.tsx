@@ -51,8 +51,11 @@ function buildClass(props: CommonProps) {
 export const Button = forwardRef<
   HTMLButtonElement,
   CommonProps & ButtonHTMLAttributes<HTMLButtonElement>
->(function Button({ leftIcon, rightIcon, children, ...rest }, ref) {
-  const cls = buildClass(rest);
+>(function Button(
+  { leftIcon, rightIcon, children, variant, size, pill, fullWidth, className, ...rest },
+  ref,
+) {
+  const cls = buildClass({ variant, size, pill, fullWidth, className });
   return (
     <button ref={ref} {...rest} className={cls}>
       {leftIcon}
@@ -64,10 +67,10 @@ export const Button = forwardRef<
 
 type LinkProps = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement>;
 export const ButtonLink = forwardRef<HTMLAnchorElement, LinkProps>(function ButtonLink(
-  { leftIcon, rightIcon, children, ...rest },
+  { leftIcon, rightIcon, children, variant, size, pill, fullWidth, className, ...rest },
   ref,
 ) {
-  const cls = buildClass(rest);
+  const cls = buildClass({ variant, size, pill, fullWidth, className });
   return (
     <a ref={ref} {...rest} className={cls}>
       {leftIcon}

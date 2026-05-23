@@ -41,7 +41,9 @@ const config: Config = {
       },
       fontFamily: {
         serif: ['var(--font-instrument-serif)', 'Georgia', 'serif'],
+        display: ['var(--font-fraunces)', 'var(--font-instrument-serif)', 'Georgia', 'serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
         'display-lg': ['3.5rem', { lineHeight: '3.75rem', letterSpacing: '-0.0875rem' }],
@@ -76,6 +78,16 @@ const config: Config = {
         'rotate-slow': 'rotateSlow 12s linear infinite',
         'gradient-shift': 'gradientShift 8s ease-in-out infinite',
         'fade-in-up': 'fadeInUp 600ms ease-out both',
+        marquee: 'marquee 38s linear infinite',
+        'marquee-slow': 'marquee 64s linear infinite',
+        float: 'float 7s ease-in-out infinite',
+        'float-slow': 'float 11s ease-in-out infinite',
+        shine: 'shine 2.4s linear infinite',
+        'caret-blink': 'caretBlink 1s steps(1) infinite',
+        drift: 'drift 18s ease-in-out infinite',
+        breathe: 'breathe 6s ease-in-out infinite',
+        spotlight: 'spotlight 14s ease-in-out infinite',
+        'tilt-loop': 'tiltLoop 9s ease-in-out infinite',
       },
       keyframes: {
         pulseOrb: {
@@ -93,6 +105,39 @@ const config: Config = {
         fadeInUp: {
           from: { opacity: '0', transform: 'translateY(24px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-120%) skewX(-12deg)' },
+          '100%': { transform: 'translateX(220%) skewX(-12deg)' },
+        },
+        caretBlink: {
+          '0%, 50%': { opacity: '1' },
+          '50.01%, 100%': { opacity: '0' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate3d(0,0,0) scale(1)' },
+          '33%': { transform: 'translate3d(40px,-30px,0) scale(1.08)' },
+          '66%': { transform: 'translate3d(-30px,30px,0) scale(0.96)' },
+        },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.85' },
+          '50%': { transform: 'scale(1.03)', opacity: '1' },
+        },
+        spotlight: {
+          '0%, 100%': { transform: 'translate(0%, 0%)' },
+          '50%': { transform: 'translate(8%, -6%)' },
+        },
+        tiltLoop: {
+          '0%, 100%': { transform: 'rotate(-2deg) translateY(0)' },
+          '50%': { transform: 'rotate(2deg) translateY(-6px)' },
         },
       },
     },
