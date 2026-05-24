@@ -80,6 +80,7 @@ const config: Config = {
         'fade-in-up': 'fadeInUp 600ms ease-out both',
         marquee: 'marquee 38s linear infinite',
         'marquee-slow': 'marquee 64s linear infinite',
+        'marquee-fast': 'marquee 18s linear infinite',
         float: 'float 7s ease-in-out infinite',
         'float-slow': 'float 11s ease-in-out infinite',
         shine: 'shine 2.4s linear infinite',

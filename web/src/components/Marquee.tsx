@@ -8,16 +8,22 @@ export function Marquee({
   pauseOnHover = true,
 }: {
   children: ReactNode;
-  speed?: 'slow' | 'normal';
+  speed?: 'slow' | 'normal' | 'fast';
   className?: string;
   pauseOnHover?: boolean;
 }) {
+  const speedClass =
+    speed === 'slow'
+      ? 'animate-marquee-slow'
+      : speed === 'fast'
+        ? 'animate-marquee-fast'
+        : 'animate-marquee';
   return (
     <div className={clsx('marquee-mask overflow-hidden', className)}>
       <div
         className={clsx(
           'flex w-max',
-          speed === 'slow' ? 'animate-marquee-slow' : 'animate-marquee',
+          speedClass,
           pauseOnHover && 'hover:[animation-play-state:paused]',
         )}
       >

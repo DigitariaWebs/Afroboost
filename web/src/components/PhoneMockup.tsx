@@ -9,6 +9,9 @@ export function PhoneMockup({
   width = 300,
   height = 620,
   priority,
+  fit = 'cover',
+  screenBg,
+  imageScale = 0.7,
 }: {
   src: string;
   alt: string;
@@ -17,7 +20,11 @@ export function PhoneMockup({
   width?: number;
   height?: number;
   priority?: boolean;
+  fit?: 'cover' | 'contain';
+  screenBg?: string;
+  imageScale?: number;
 }) {
+  const isContain = fit === 'contain';
   return (
     <div
       className={clsx(
@@ -37,18 +44,40 @@ export function PhoneMockup({
         }}
       >
         {/* Inner bezel */}
-        <div className="relative h-full w-full overflow-hidden rounded-[34px] bg-background">
+        <div
+          className="relative h-full w-full overflow-hidden rounded-[34px] bg-background"
+          style={screenBg ? { background: screenBg } : undefined}
+        >
           {/* Notch */}
           <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-black/95" />
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            sizes="(min-width: 1024px) 320px, 60vw"
-            className="object-cover"
-            unoptimized
-            priority={priority}
-          />
+          {isContain ? (
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ padding: `${(1 - imageScale) * 50}%` }}
+            >
+              <div className="relative h-full w-full">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  sizes="(min-width: 1024px) 320px, 60vw"
+                  className="object-contain"
+                  unoptimized
+                  priority={priority}
+                />
+              </div>
+            </div>
+          ) : (
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              sizes="(min-width: 1024px) 320px, 60vw"
+              className="object-cover"
+              unoptimized
+              priority={priority}
+            />
+          )}
         </div>
       </div>
     </div>

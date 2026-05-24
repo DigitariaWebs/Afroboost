@@ -26,7 +26,7 @@ function AnimatedPrice({ value, prefix = '$' }: { value: number; prefix?: string
 
 export function Pricing() {
   const t = useTranslations('pricing');
-  const [annual, setAnnual] = useState(false);
+  const [annual, setAnnual] = useState(true);
 
   const monthly: Record<PlanKey, number> = {
     discovery: 49,
@@ -74,7 +74,7 @@ export function Pricing() {
           <div
             role="group"
             aria-label="Billing period"
-            className="relative inline-flex items-center rounded-full border border-border bg-surface-elevated/70 p-1 backdrop-blur"
+            className="relative inline-grid grid-cols-2 items-center rounded-full border border-border bg-surface-elevated/70 p-1 backdrop-blur min-w-[260px]"
           >
             <span
               className={clsx(
@@ -93,7 +93,7 @@ export function Pricing() {
                 type="button"
                 onClick={tab.onClick}
                 className={clsx(
-                  'relative z-10 inline-flex items-center gap-1.5 px-5 py-2 text-caption font-medium transition-colors',
+                  'relative z-10 inline-flex items-center justify-center gap-1.5 px-5 py-2 text-caption font-medium transition-colors',
                   tab.active ? 'text-accent-fg' : 'text-muted hover:text-foreground',
                 )}
               >
@@ -142,9 +142,9 @@ export function Pricing() {
                       }}
                     />
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge tone="gold" className="shadow-[0_0_20px_rgba(232,184,74,0.4)]">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(120deg,#F2C95C,#E8B84A,#B8842A)] border border-[#15643E]/40 px-3 py-1 text-caption font-bold tracking-wide text-[#15643E] shadow-[0_8px_22px_rgba(232,184,74,0.55)]">
                         <Sparkles className="h-3 w-3" /> {t('popular')}
-                      </Badge>
+                      </span>
                     </div>
                   </>
                 ) : null}

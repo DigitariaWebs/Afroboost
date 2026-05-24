@@ -17,9 +17,9 @@ export function FAQ() {
   }));
 
   return (
-    <Section id="faq" containerSize="narrow">
+    <Section id="faq" containerSize="narrow" className="bg-white">
       <Reveal direction="up">
-        <SectionHeading overline={t('overline')} title={t('title')} align="center" />
+        <SectionHeading overline={t('overline')} title={t('title')} align="center" light />
       </Reveal>
       <div className="flex flex-col gap-3">
         {items.map((it, i) => {
@@ -28,10 +28,10 @@ export function FAQ() {
             <Reveal key={i} direction="up" delay={i * 70}>
               <div
                 className={clsx(
-                  'group/q relative overflow-hidden rounded-md border bg-surface-elevated/60 transition-colors',
+                  'group/q relative overflow-hidden rounded-xl border bg-white transition-colors shadow-[0_4px_18px_-12px_rgba(15,30,25,0.18)]',
                   open
-                    ? 'border-accent/50 bg-surface-elevated'
-                    : 'border-border hover:border-border-strong',
+                    ? 'border-accent-muted/50 bg-[#FAFBFB]'
+                    : 'border-[#E5EAE7] hover:border-accent-muted/40',
                 )}
               >
                 {open ? (
@@ -46,8 +46,8 @@ export function FAQ() {
                   onClick={() => setOpenIndex(open ? null : i)}
                   aria-expanded={open}
                 >
-                  <span className="flex items-baseline gap-3 font-display text-h3 sm:text-lg text-foreground">
-                    <span className="font-mono text-[11px] tracking-[0.18em] text-accent/70">
+                  <span className="flex items-baseline gap-3 font-display text-h3 sm:text-lg text-[#0E1A14]">
+                    <span className="font-mono text-[11px] tracking-[0.18em] text-accent-muted">
                       0{i + 1}
                     </span>
                     <span>{it.q}</span>
@@ -56,8 +56,8 @@ export function FAQ() {
                     className={clsx(
                       'inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-500',
                       open
-                        ? 'border-accent bg-accent text-accent-fg rotate-[135deg]'
-                        : 'border-border text-muted group-hover/q:border-accent/50 group-hover/q:text-accent',
+                        ? 'border-accent-muted bg-accent-muted text-white rotate-[135deg]'
+                        : 'border-[#E5EAE7] text-[#6B7570] group-hover/q:border-accent-muted/50 group-hover/q:text-accent-muted',
                     )}
                     aria-hidden
                   >
@@ -71,7 +71,7 @@ export function FAQ() {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 pl-[3.4rem] text-body text-muted leading-relaxed">
+                    <p className="px-5 pb-5 pl-[3.4rem] text-[15px] text-[#4A5750] leading-relaxed">
                       {it.a}
                     </p>
                   </div>

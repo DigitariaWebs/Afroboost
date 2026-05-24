@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { StoreBadges } from '@/components/StoreBadges';
-import { AIOrb } from '@/components/AIOrb';
 import { PhoneMockup } from '@/components/PhoneMockup';
 import { KenteOverlay } from '@/components/KenteOverlay';
 import { Reveal, RevealLines } from '@/components/Reveal';
@@ -23,31 +22,7 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden pt-10 pb-24 sm:pt-16 sm:pb-32 lg:pt-20">
-      {/* Decorative backdrop */}
       <KenteOverlay opacity={0.04} className="-z-10" />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 -top-40 -z-10 h-[760px] blur-3xl animate-spotlight"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(31,138,85,0.45) 0%, transparent 70%)',
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-32 top-40 -z-10 h-[420px] w-[420px] rounded-full opacity-60 blur-3xl animate-drift"
-        style={{
-          background: 'radial-gradient(circle, rgba(232,184,74,0.35), transparent 70%)',
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 top-[420px] -z-10 h-[460px] w-[460px] rounded-full opacity-50 blur-3xl animate-drift"
-        style={{
-          animationDelay: '4s',
-          background: 'radial-gradient(circle, rgba(91,42,79,0.40), transparent 70%)',
-        }}
-      />
       {/* Grid overlay */}
       <div
         aria-hidden
@@ -158,73 +133,57 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Phone column */}
-          <div className="lg:col-span-5 relative">
+          {/* Phone column (desktop only) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
             <Reveal direction="scale" delay={350}>
               <div
                 className="relative mx-auto flex items-center justify-center"
                 style={{ minHeight: 600 }}
               >
-                {/* Outer rotating dial */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 m-auto h-[460px] w-[460px] rounded-full opacity-30"
-                  style={{
-                    background:
-                      'conic-gradient(from 90deg, rgba(232,184,74,0.5), transparent 40%, rgba(31,138,85,0.4) 60%, transparent 100%)',
-                    animation: 'rotateSlow 22s linear infinite',
-                  }}
-                />
-                <AIOrb
-                  size={420}
-                  className="absolute -top-8 -left-8 lg:-left-20 opacity-90 animate-float-slow"
-                />
-
                 {/* Floating callout chips */}
                 <div className="pointer-events-none absolute left-0 top-10 z-20 hidden md:block">
-                  <div className="animate-float">
-                    <div className="rounded-md border border-accent/40 bg-background/85 px-3 py-2 text-caption text-foreground shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur">
-                      <div className="flex items-center gap-2">
-                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-accent">
-                          <PhoneCall className="h-3 w-3" />
-                        </span>
-                        <div>
-                          <p className="text-[11px] uppercase tracking-[0.18em] text-accent">
-                            Appel pris
-                          </p>
-                          <p className="font-medium">Réservation · 4 pers.</p>
-                        </div>
+                  <div className="rounded-md border border-accent/40 bg-background/85 px-3 py-2 text-caption text-foreground shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-accent">
+                        <PhoneCall className="h-3 w-3" />
+                      </span>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.18em] text-accent">
+                          Appel pris
+                        </p>
+                        <p className="font-medium">Réservation · 4 pers.</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="pointer-events-none absolute right-0 bottom-20 z-20 hidden md:block">
-                  <div className="animate-float" style={{ animationDelay: '1.5s' }}>
-                    <div className="rounded-md border border-success/40 bg-background/85 px-3 py-2 text-caption text-foreground shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur">
-                      <div className="flex items-center gap-2">
-                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-success/15 text-success">
-                          <Star className="h-3 w-3 fill-success" />
-                        </span>
-                        <div>
-                          <p className="text-[11px] uppercase tracking-[0.18em] text-success">
-                            Avis 5★ publié
-                          </p>
-                          <p className="font-medium">Réponse auto envoyée</p>
-                        </div>
+                  <div className="rounded-md border border-success/40 bg-background/85 px-3 py-2 text-caption text-foreground shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-success/15 text-success">
+                        <Star className="h-3 w-3 fill-success" />
+                      </span>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.18em] text-success">
+                          Avis 5★ publié
+                        </p>
+                        <p className="font-medium">Réponse auto envoyée</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="relative z-10 -mr-6 sm:-mr-12 animate-float-slow">
+                <div className="relative z-10 -mr-6 sm:-mr-12">
                   <PhoneMockup
-                    src="/demo-1.gif"
-                    alt="AfroBoost dashboard"
+                    src="/logo.png"
+                    alt="AfroBoost"
                     width={300}
                     height={620}
                     tilt
                     priority
+                    fit="contain"
+                    imageScale={0.7}
+                    screenBg="radial-gradient(circle at 50% 35%, rgba(31,138,85,0.35) 0%, rgba(14,26,20,0.95) 60%, #0E1A14 100%)"
                   />
                 </div>
               </div>

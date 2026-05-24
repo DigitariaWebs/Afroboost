@@ -11,7 +11,14 @@
     "how": "Comment ça marche",
     "pricing": "Tarifs",
     "faq": "FAQ",
-    "download": "Télécharger"
+    "download": "Télécharger",
+    "downloadTitle": "Téléchargez AfroBoost",
+    "downloadSubtitle": "Choisissez votre plateforme.",
+    "downloadApple": "App Store",
+    "downloadAppleSub": "iPhone · iPad",
+    "downloadGoogle": "Google Play",
+    "downloadGoogleSub": "Android",
+    "downloadClose": "Fermer"
   },
   "hero": {
     "eyebrow": "AfroBoost — l'IA des entrepreneurs.es",

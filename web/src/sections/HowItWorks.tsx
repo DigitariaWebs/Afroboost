@@ -1,101 +1,169 @@
+'use client';
+
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link2, Sparkles, TrendingUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import clsx from 'clsx';
 import { Section } from '@/components/Section';
-import { PhoneMockup } from '@/components/PhoneMockup';
 import { Reveal } from '@/components/Reveal';
-import { IconDisc } from '@/components/IconDisc';
+import { PhoneMockup } from '@/components/PhoneMockup';
 
 export function HowItWorks() {
   const t = useTranslations('how');
+  const [index, setIndex] = useState(0);
 
   const steps = [
     {
       number: t('steps.s1Number'),
       title: t('steps.s1Title'),
       body: t('steps.s1Body'),
-      icon: Link2,
-      tone: 'emerald' as const,
-      src: '/demo-2.gif',
+      src: '/images/connect.png',
     },
     {
       number: t('steps.s2Number'),
       title: t('steps.s2Title'),
       body: t('steps.s2Body'),
-      icon: Sparkles,
-      tone: 'gold' as const,
-      src: '/demo-3.gif',
+      src: '/images/ai.png',
     },
     {
       number: t('steps.s3Number'),
       title: t('steps.s3Title'),
       body: t('steps.s3Body'),
-      icon: TrendingUp,
-      tone: 'plum' as const,
-      src: '/demo-1.gif',
+      src: '/images/insight.png',
     },
   ];
+
+  const total = steps.length;
+  const prev = () => setIndex((i) => (i - 1 + total) % total);
+  const next = () => setIndex((i) => (i + 1) % total);
 
   return (
     <Section id="how" className="relative">
       <Reveal direction="up">
-        <div className="flex flex-col items-center text-center gap-3 mb-16">
+        <div className="flex flex-col items-center text-center gap-3 mb-12 sm:mb-16">
           <span className="inline-flex items-center gap-2 text-overline uppercase font-medium text-accent tracking-[0.22em]">
             <span className="h-px w-6 bg-accent/60" />
             {t('overline')}
             <span className="h-px w-6 bg-accent/60" />
           </span>
-          <h2 className="font-display text-display text-foreground max-w-3xl">{t('title')}</h2>
+          <h2 className="font-display text-display text-foreground max-w-3xl">
+            {t('title')}
+          </h2>
           <p className="text-base sm:text-lg text-muted max-w-2xl leading-relaxed">
             {t('subtitle')}
           </p>
         </div>
       </Reveal>
 
-      <div className="relative grid gap-12 lg:grid-cols-3 lg:gap-8">
-        {/* Animated kente connector line */}
-        <div
-          aria-hidden
-          className="hidden lg:block absolute top-[88px] left-[10%] right-[10%] h-[2px] overflow-hidden rounded-full"
-        >
-          <div
-            className="h-full w-[200%] animate-marquee-slow"
-            style={{
-              background:
-                'linear-gradient(90deg, transparent, #1F8A55 12%, #E8B84A 30%, #5B2A4F 50%, #1F8A55 68%, #E8B84A 88%, transparent), linear-gradient(90deg, transparent, #1F8A55 12%, #E8B84A 30%, #5B2A4F 50%, #1F8A55 68%, #E8B84A 88%, transparent)',
-              backgroundSize: '50% 100%',
-            }}
-          />
-        </div>
-        {/* Connector dots */}
-        <div aria-hidden className="hidden lg:block absolute top-[82px] left-[10%] w-2 h-2 rounded-full bg-accent shadow-[0_0_12px_rgba(232,184,74,0.7)]" />
-        <div aria-hidden className="hidden lg:block absolute top-[82px] right-[10%] w-2 h-2 rounded-full bg-accent shadow-[0_0_12px_rgba(232,184,74,0.7)]" />
+      <Reveal direction="up" delay={120}>
+        <div className="relative mx-auto max-w-5xl">
+          {/* Stage */}
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16 lg:min-h-[560px]">
+            {/* Phone */}
+            <div className="relative flex justify-center order-2 lg:order-1 h-[580px] lg:h-auto">
+              {steps.map((s, i) => (
+                <div
+                  key={s.title}
+                  className={clsx(
+                    'absolute inset-0 flex justify-center transition-all duration-700 ease-out',
+                    i === index
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-3 pointer-events-none',
+                  )}
+                  aria-hidden={i !== index}
+                >
+                  <PhoneMockup
+                    src={s.src}
+                    alt={s.title}
+                    width={300}
+                    height={560}
+                    fit="contain"
+                    imageScale={0.88}
+                    screenBg="radial-gradient(circle at 50% 30%, rgba(31,138,85,0.28) 0%, rgba(14,26,20,0.95) 60%, #0E1A14 100%)"
+                  />
+                </div>
+              ))}
+            </div>
 
-        {steps.map((s, i) => {
-          const Icon = s.icon;
-          return (
-            <Reveal key={s.title} direction="up" delay={i * 180}>
-              <div className="relative flex flex-col items-center text-center group">
-                <div className="relative z-10 mb-6">
-                  <IconDisc tone={s.tone} size="lg">
-                    <Icon className="h-7 w-7" />
-                  </IconDisc>
-                  <span className="absolute -top-1 -right-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-background text-[10px] font-mono font-semibold text-accent ring-1 ring-accent/50">
-                    0{i + 1}
-                  </span>
-                </div>
-                <p className="font-display text-display text-accent/25 mb-1 tabular-nums">{s.number}</p>
-                <h3 className="font-display text-h1 sm:text-[1.6rem] text-foreground mb-3 leading-tight">
-                  {s.title}
-                </h3>
-                <p className="max-w-xs text-body text-muted leading-relaxed mb-8">{s.body}</p>
-                <div className="transition-transform duration-700 group-hover:-translate-y-1">
-                  <PhoneMockup src={s.src} alt={s.title} width={220} height={460} />
-                </div>
+            {/* Copy */}
+            <div className="relative order-1 lg:order-2">
+              <div className="relative min-h-[220px] lg:min-h-[260px]">
+                {steps.map((s, i) => (
+                  <div
+                    key={s.title}
+                    className={clsx(
+                      'absolute inset-0 transition-all duration-700 ease-out',
+                      i === index
+                        ? 'opacity-100 translate-x-0'
+                        : 'opacity-0 -translate-x-4 pointer-events-none',
+                    )}
+                    aria-hidden={i !== index}
+                  >
+                    <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent mb-3">
+                      Étape {s.number}
+                    </p>
+                    <h3 className="font-display text-[2rem] sm:text-[2.5rem] leading-[1.05] tracking-[-0.02em] text-foreground mb-4">
+                      {s.title}
+                    </h3>
+                    <p className="text-base sm:text-lg text-muted leading-relaxed">
+                      {s.body}
+                    </p>
+                  </div>
+                ))}
               </div>
-            </Reveal>
-          );
-        })}
-      </div>
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="mt-12 flex items-center justify-center gap-6">
+            <button
+              type="button"
+              onClick={prev}
+              aria-label="Previous step"
+              className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-border-strong bg-surface-elevated/70 text-foreground backdrop-blur transition hover:border-accent/60 hover:bg-surface-elevated hover:-translate-x-0.5"
+            >
+              <ChevronLeft className="h-5 w-5 transition group-hover:text-accent" />
+            </button>
+
+            <div className="relative flex items-center gap-3">
+              <span className="font-display tabular-nums text-[2.25rem] leading-none text-gold-foil">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-fg">
+                / 0{total}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Next step"
+              className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-border-strong bg-surface-elevated/70 text-foreground backdrop-blur transition hover:border-accent/60 hover:bg-surface-elevated hover:translate-x-0.5"
+            >
+              <ChevronRight className="h-5 w-5 transition group-hover:text-accent" />
+            </button>
+          </div>
+
+          {/* Step dots */}
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {steps.map((s, i) => (
+              <button
+                key={s.title}
+                type="button"
+                onClick={() => setIndex(i)}
+                aria-label={`Go to step ${i + 1}`}
+                aria-current={i === index ? 'step' : undefined}
+                className={clsx(
+                  'h-1.5 rounded-full transition-all duration-500',
+                  i === index
+                    ? 'w-10 bg-accent shadow-[0_0_10px_rgba(232,184,74,0.5)]'
+                    : 'w-1.5 bg-border-strong hover:bg-accent/60',
+                )}
+              />
+            ))}
+          </div>
+        </div>
+      </Reveal>
     </Section>
   );
 }

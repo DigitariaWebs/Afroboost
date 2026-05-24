@@ -6,6 +6,8 @@ import { locales } from '@/lib/i18n';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { AnnouncementBanner } from '@/components/AnnouncementBanner';
+import GradualBlur from '@/components/GradualBlur';
+import { LanguageFab } from '@/components/LanguageFab';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -61,6 +63,18 @@ export default async function LocaleLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <GradualBlur
+          target="page"
+          position="bottom"
+          height="6rem"
+          strength={2}
+          divCount={6}
+          curve="bezier"
+          exponential
+          opacity={1}
+          zIndex={30}
+        />
+        <LanguageFab />
       </div>
     </NextIntlClientProvider>
   );

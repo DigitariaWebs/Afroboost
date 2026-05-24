@@ -11,7 +11,14 @@
     "how": "How it works",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "download": "Download"
+    "download": "Download",
+    "downloadTitle": "Get AfroBoost",
+    "downloadSubtitle": "Pick your platform.",
+    "downloadApple": "App Store",
+    "downloadAppleSub": "iPhone · iPad",
+    "downloadGoogle": "Google Play",
+    "downloadGoogleSub": "Android",
+    "downloadClose": "Close"
   },
   "hero": {
     "eyebrow": "AfroBoost — AI for entrepreneurs",
@@ -192,7 +199,7 @@
   },
   "footer": {
     "tagline": "The AI that speaks your language, understands your culture, and grows your business.",
-    "madeIn": "Made in Montreal with ❤️ for the diaspora.",
+    "madeIn": " ",
     "rights": "All rights reserved.",
     "product": {
       "title": "Product",

@@ -5,7 +5,7 @@ export function AnnouncementBanner() {
   const t = useTranslations('banner');
   return (
     <div
-      className="relative z-50 overflow-hidden border-b border-accent/15 bg-[linear-gradient(90deg,rgba(31,138,85,0.18)_0%,rgba(232,184,74,0.22)_50%,rgba(91,42,79,0.18)_100%)] bg-[length:200%_100%] animate-gradient-shift"
+      className="relative z-50 hidden overflow-hidden border-b border-accent/15 bg-[linear-gradient(90deg,rgba(31,138,85,0.18)_0%,rgba(232,184,74,0.22)_50%,rgba(91,42,79,0.18)_100%)] bg-[length:200%_100%] animate-gradient-shift lg:block"
       role="status"
     >
       {/* shimmer overlay */}
